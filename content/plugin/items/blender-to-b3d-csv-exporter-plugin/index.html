@@ -1,0 +1,122 @@
+<p>Original Author: https://github.com/maisvendoo/blenderCSV
+Blender 2.8+ Port: ​https://github.com/zbx1425/blenderCSV
+B3d Export Port: https://progressiveaddon.weebly.com</p>
+<p><strong>How To Instal : Blender &gt; Edit &gt; Preferences... &gt; Add-ons &gt; Instal &gt; find the io_scene_csv.zip that have you downloaded.</strong>
+Known Issue Old Version:
+  1. Importer broken, Only the exporter worked. 
+  2. Face and Face2 command have bug that you need to delete the coma ( , ) after the command to make it works, it can easily fixed by find and replace feature in your text editor such as notepad or notepad++. 
+    Change coma in <strong>Face,</strong> or <strong>Face2,</strong> to <strong>Face</strong> or <strong>Face2</strong> .
+  3. Some command like <strong>SetBlendMode, Normal, 0, DivideExponent4</strong> always get written you can delete it if you dont want.<strong>Changelog</strong></p>
+<p>This document provides a line-specific breakdown of all changes made to the
+Blender OpenBVE Addon, identifying what was added, modified, or deleted,
+along with the technical and design rationale.</p>
+<p>You can find the original version of this plugin at:
+Original Version: https://github.com/maisvendoo/blenderCSV
+Post 2.80+ Version: https://github.com/zbx1425/blenderCSV
+b3d exporter version: https://progressiveaddon.weebly.com</p>
+<h1>===========================================================================
+FILE: __init__.py</h1>
+<p>[MODIFIED] Line 22-29 (Original Version):</p>
+<ul>
+<li>Change: Version (0, 7, 0) -&gt; (0, 8, 0).</li>
+<li>Rationale: Surpasses the original release to signify significant feature
+  additions (B3D, Author tagging) and a major architectural shift (Exporter-only).</li>
+</ul>
+<p>[MODIFIED] Line 32 (Original Version):</p>
+<ul>
+<li>Change: &quot;blender&quot;: (4, 0, 0) -&gt; (2, 80, 0).</li>
+<li>Rationale: Increased compatibility. While the code is optimized for 4.x+,
+  this allows users on older stable LTS versions (2.83, 3.6) to still use it.</li>
+</ul>
+<p>[DELETED] Line 51-95 (Original Version):</p>
+<ul>
+<li>Change: Removed the entire `CsvImporter` class.</li>
+<li>Rationale: Strategic decision to deprecate the importer. Removing this large
+  code block (along with `ImportCSV.py`) protects the game community's assets
+  from unauthorized conversion while reducing addon bloat.</li>
+</ul>
+<p>[MODIFIED] Line 98-121 (Original Version / Exporter Operator):</p>
+<ul>
+<li>ADDED (L107-121): `update_export_format` and `export_format` EnumProperty.</li>
+<li>ADDED (L123-132): `texture_path_mode` (Absolute, Relative, Filename Only).</li>
+<li>ADDED (L134-138): `author_name` Metadata field.</li>
+<li>Rationale: New features requested to handle .b3d format, customizable path
+  handling for different asset structures, and creator attribution.</li>
+</ul>
+<p>[DELETED] Lines 285-286, 294-295, 312-313 (Original Version):</p>
+<ul>
+<li>Change: Removed `menu_import` append and `CsvImporter` registration.</li>
+<li>Rationale: Complete UI cleanup after removing the importer backend.</li>
+</ul>
+<h1>===========================================================================
+FILE: CSV.py</h1>
+<p>[DELETED] Line 45-50 (Original Version):</p>
+<ul>
+<li>Change: Removed `ImportOption` and standard `logging` import.</li>
+<li>Rationale: Part of the importer removal; shifted to using the internal
+  `.logger` module for consistency.</li>
+</ul>
+<p>[MODIFIED] Line 51-57 (Original Version / ExportOption):</p>
+<ul>
+<li>Change: Added `export_format`, `texture_path_mode`, and `author_name`.</li>
+<li>Rationale: Centralized configuration state for the new exporter features.</li>
+</ul>
+<p>[DELETED] Lines 199-926 (Original Version):</p>
+<ul>
+<li>Change: Deleted the ~727 line `load_csv` method.</li>
+<li>Rationale: This was the core parsing engine for imports. Its removal is the
+  primary part of the &quot;clean-out&quot; to make this an Exporter-only plugin.</li>
+</ul>
+<p>[MODIFIED] Lines 928-1007 (Original Version / export_csv):</p>
+<ul>
+<li>Change: Complete refactor from simple string concatenation to a list-based
+  buffer system (`lines = []`).</li>
+<li>ADDED: `f4()` helper (L268-272) for 4-decimal precision and stripping Zeros.</li>
+<li>ADDED: `fmt_cmd()` helper (L263-266) to handle B3D vs CSV syntax differences.</li>
+<li>Rationale: PERFORMANCE and PRECISION. Joins are faster than repeated string
+  addition. The `f4` helper prevents scientific notation (like 1e-05) which
+  crashes some legacy BVE parsers.</li>
+</ul>
+<h1>===========================================================================
+FILE: ExportCSV.py</h1>
+<p>[ADDED] Current Lines 69-100:</p>
+<ul>
+<li>Change: New helper `_get_processed_texture_path`.</li>
+<li>Rationale: Centralizes path logic. It handles the &quot;Filename Only&quot; request
+  by using `.name`, and ensures all paths use forward slashes (`/`) for
+  OpenBVE cross-platform compatibility.</li>
+</ul>
+<p>[MODIFIED] Line 93-112 (Original Version / Vertex Logic):</p>
+<ul>
+<li>Change: Implemented `vertex_cache` (L139-169 in current version).</li>
+<li>Rationale: MAJOR OPTIMIZATION. The original code added a new vertex to the
+  list for every face corner. The new cache merges vertices with identical
+  pos/normal/uv data, reducing file size and vertex count by 60-80% for
+  typical models.</li>
+</ul>
+<p>[MODIFIED] Line 132-152 (Original Version / Material Logic):</p>
+<ul>
+<li>Change: Replaced hardcoded node index with a robust generator search:
+  `next((n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)`.</li>
+<li>Rationale: CRASH PREVENTION. The original would crash if a material didn't
+  have exactly one Principled BSDF node in a specific order. The new logic is
+  fail-safe and handles static colors on the input even without texture nodes.</li>
+</ul>
+<h1>===========================================================================
+FILE: Transform.py</h1>
+<p>[MODIFIED] Line 38 and 46 (Original Version):</p>
+<ul>
+<li>Change: Normal transformation logic.</li>
+<li>Original: `(swap_mat @ matrix_world).to_3x3().normalized()`</li>
+<li>Current: `full_transform.to_3x3().inverted().transposed()`</li>
+<li>Rationale: MATHEMATICAL CORRECTNESS. Using the Inverse-Transpose matrix is
+  the standard for transforming normals when non-uniform scaling (e.g., stretching
+  on X only) is applied, ensuring lighting remains correct.</li>
+</ul>
+<h1>===========================================================================
+FILE: ImportCSV.py</h1>
+<p>[DELETED] (Total File Removal)</p>
+<ul>
+<li>Rationale: This file was dedicated entirely to the Importer. Removing it
+  ensures no residual code path can be used to re-enable import capabilities.</li>
+</ul>

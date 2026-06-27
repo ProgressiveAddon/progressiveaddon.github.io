@@ -1,0 +1,141 @@
+backend:
+  name: github
+  repo: ProgressiveAddon/pa-web
+  branch: main # Branch to update
+
+local_backend: true
+
+media_folder: "src/assets/img" # Folder where user uploaded files will go
+public_folder: "/assets/img" # The src attribute for uploaded images
+
+collections:
+  - name: "dmu"
+    label: "DMU (Rolling Stock)"
+    folder: "src/content/dmu/items"
+    create: true
+    slug: "{{slug}}"
+    fields: &addon_fields
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "OpenBVE (High) Link", name: "bve_high", widget: "string", required: false }
+      - { label: "OpenBVE (High) Hash", name: "bve_high_hash", widget: "string", required: false }
+      - { label: "OpenBVE (Low) Link", name: "bve_low", widget: "string", required: false }
+      - { label: "OpenBVE (Low) Hash", name: "bve_low_hash", widget: "string", required: false }
+      - { label: "BVETS (High) Link", name: "bvets_high", widget: "string", required: false }
+      - { label: "BVETS (High) Hash", name: "bvets_high_hash", widget: "string", required: false }
+      - { label: "BVETS (Low) Link", name: "bvets_low", widget: "string", required: false }
+      - { label: "BVETS (Low) Hash", name: "bvets_low_hash", widget: "string", required: false }
+      - { label: "Trainz (High) Link", name: "trainz_high", widget: "string", required: false }
+      - { label: "Trainz (High) Hash", name: "trainz_high_hash", widget: "string", required: false }
+      - { label: "Trainz (Low) Link", name: "trainz_low", widget: "string", required: false }
+      - { label: "Trainz (Low) Hash", name: "trainz_low_hash", widget: "string", required: false }
+      - { label: "Special Notice", name: "notice", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "routes"
+    label: "Routes"
+    folder: "src/content/routes/items"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Company / Operator", name: "company", widget: "string", required: false }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "OpenBVE (High) Link", name: "bve_high", widget: "string", required: false }
+      - { label: "OpenBVE (High) Hash", name: "bve_high_hash", widget: "string", required: false }
+      - { label: "OpenBVE (Low) Link", name: "bve_low", widget: "string", required: false }
+      - { label: "OpenBVE (Low) Hash", name: "bve_low_hash", widget: "string", required: false }
+      - { label: "BVETS (High) Link", name: "bvets_high", widget: "string", required: false }
+      - { label: "BVETS (High) Hash", name: "bvets_high_hash", widget: "string", required: false }
+      - { label: "BVETS (Low) Link", name: "bvets_low", widget: "string", required: false }
+      - { label: "BVETS (Low) Hash", name: "bvets_low_hash", widget: "string", required: false }
+      - { label: "Trainz (High) Link", name: "trainz_high", widget: "string", required: false }
+      - { label: "Trainz (High) Hash", name: "trainz_high_hash", widget: "string", required: false }
+      - { label: "Trainz (Low) Link", name: "trainz_low", widget: "string", required: false }
+      - { label: "Trainz (Low) Hash", name: "trainz_low_hash", widget: "string", required: false }
+      - { label: "Special Notice", name: "notice", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "objects"
+    label: "Objects"
+    folder: "src/content/objects/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *addon_fields
+
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "emu"
+    label: "EMU (Rolling Stock)"
+    folder: "src/content/emu/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *addon_fields
+
+  - name: "car_trainset"
+    label: "Car and Trainset"
+    folder: "src/content/car-trainset/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *addon_fields
+
+  - name: "special_unit"
+    label: "Special Unit"
+    folder: "src/content/special-unit/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *addon_fields
+
+  - name: "mesh"
+    label: "3D Mesh"
+    folder: "src/content/3d-mesh/items"
+    create: true
+    slug: "{{slug}}"
+    fields: &simple_addon_fields
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Download Link 1 Label", name: "download_label", widget: "string", required: false }
+      - { label: "Download Link 1", name: "download", widget: "string", required: false }
+      - { label: "SHA Hash 1", name: "download_hash", widget: "string", required: false }
+      - { label: "Download Link 2 Label", name: "download_2_label", widget: "string", required: false }
+      - { label: "Download Link 2", name: "download_2", widget: "string", required: false }
+      - { label: "SHA Hash 2", name: "download_hash_2", widget: "string", required: false }
+      - { label: "Special Notice", name: "notice", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+ 
+  - name: "plugin"
+    label: "Plugin"
+    folder: "src/content/plugin/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *simple_addon_fields
+ 
+  - name: "dependency"
+    label: "Dependency"
+    folder: "src/content/dependency/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *simple_addon_fields
+ 
+  - name: "archive"
+    label: "Archive"
+    folder: "src/content/archive/items"
+    create: true
+    slug: "{{slug}}"
+    fields: *simple_addon_fields

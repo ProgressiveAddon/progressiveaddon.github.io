@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects - ProgressiveAddon</title>
+    <meta name="description" content="Static objects and items for train simulators.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        /* Extra polish for scroll smoothness */
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        /* Fix for big titles getting cut */
+        .category-title {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            line-height: 1.1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <a href="/" class="logo hidden sm:flex items-center gap-4">
+            <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0">
+                <img src="/assets/img/logo.svg" alt="PA" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
+            </span>
+            <span class="hidden sm:inline">PROGRESSIVE ADDON</span>
+        </a>
+        <nav>
+            <a href="/" class="">HOME</a>
+            <div class="dropdown">
+                <a href="/content" class="dropdown-trigger active">
+                    CONTENT
+                    <svg class="chevron-icon" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block; vertical-align:middle; transition: transform 0.3s ease;">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="/content/dmu">DIESEL MULTIPLE UNIT</a>
+                    <a href="/content/special-unit">SPECIAL UNIT</a>
+                    <a href="/content/objects">OBJECTS</a>
+                    <a href="/content/3d-mesh">3D MESH</a>
+                    <a href="/content/plugin">PLUGINS</a>
+                    <a href="/content/dependency">DEPENDENCY</a>
+                    <a href="/archive">ARCHIVE</a>
+                </div>
+            </div>
+            <a href="/blog" class="">BLOG</a>
+            <a href="/about" class="">ABOUT</a>
+        </nav>
+        <div class="hidden md:block">
+            <a href="/content" class="btn text-[10px] py-2 px-6">LATEST RELEASES</a>
+        </div>
+    </header>
+
+    <!-- Theme Toggle -->
+    <div id="theme-toggle" class="theme-toggle-floating">
+        <span id="theme-icon">🌙</span>
+    </div>
+
+    <main>
+        <section class="relative overflow-hidden pt-36 pb-6 md:pt-48 md:pb-20">
+    <div class="container mx-auto px-6 relative z-10 text-center">
+        <h1 class="hero-title mb-6 tracking-tighter">
+            Objects /<br><span class="opacity-50">COLLECTION</span>
+        </h1>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-12 mt-6 md:mt-12 opacity-80">
+            <img src="/assets/img/addons/pabve.png" class="h-8 md:h-12 object-contain" alt="OpenBVE">
+            <img src="/assets/img/addons/pabvets.png" class="h-8 md:h-12 object-contain" alt="BVETS">
+            <img src="/assets/img/addons/patrainz.png" class="h-8 md:h-12 object-contain" alt="Trainz">
+        </div>
+    </div>
+</section>
+
+<section class="py-8 md:py-20 bg-bg-dark transition-colors duration-500">
+    <div class="container mx-auto px-6">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; align-items: stretch;">
+            
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/10_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="25 METER RAIL">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">25 METER RAIL</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Straigh rail with 25 meter length</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1czRlYLSDze-h9y3rFXPLRS7NpElAyDD0/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/19_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="ADVERTISEMENT TV">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">ADVERTISEMENT TV</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">A tv that display an ads in JR205 Trains.
+- 1 object for each game
+- include texture for openbve (for trainz i don't know how to include texture to .im mesh so i use base color instead.)</p>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/13TUbrOo9GzHDTtcOH20A6Zcks-JG2ydy/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/auxdolly_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="AUXILIARY DOLLY">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">AUXILIARY DOLLY</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Static object, Include HD texture.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+            <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
+                <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+            </div>
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
+                         <div class="flex flex-col gap-2">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
+                         <div class="flex flex-col gap-2">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/published/big-tree.png?1652772910" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="BIG TREE 1">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">BIG TREE 1</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Static tree object</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1CX0USQCRotdNsUrygx91h8A1GVmfXSLu/view?usp=sharing" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/8_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="CEMENT COMODITY">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">CEMENT COMODITY</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">HD : 850~ poly
+Length: 20 meter</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/19dcbmH1SvjaDZhKT0A6M8rLgbELz_EwI/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/gapfillerpreview_orig.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="Gap Filler V2">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Gap Filler V2</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- More Accurate shape
+- Highly Optimized (2000~poly).</p>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+            <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
+                <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+            </div>
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
+                         <div class="flex flex-col gap-2">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
+                         <div class="flex flex-col gap-2">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/preview_orig.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="Gap Filler">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Gap Filler</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- Highly Optimized (1700~poly).</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+            <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
+                <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+            </div>
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
+                         <div class="flex flex-col gap-2">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
+                         <div class="flex flex-col gap-2">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/icond_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="I COND AIR CONDITIONER">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">I COND AIR CONDITIONER</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">I-COND AC
+Type ACI 1803 & ACI 3601</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1ASEhoG5M3_JTjH7dvcsuvyad_X-ZSpBk/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/published/flagg.png?1701590244" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="INDONESIAN FLAG">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">INDONESIAN FLAG</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​Flag that installed on RI-1 Locomotive.
+What you get ?
+- 3 object, 2 flag with a pole and 1 flag only.
+- medium poly
+- available in .b3d file</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/11h26HG5gegsb8YWAM7vGprKuH61rAkAL" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/11h26HG5gegsb8YWAM7vGprKuH61rAkAL" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/4_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="JAPAN STATION SIGN">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JAPAN STATION SIGN</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">Ultra low poly version (only 2 face per object).
+What you get ?
+- 4 sign object with each object had 1 wide version.
+- Texture for template for station name.
+- available in .b3d file</p>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1-jfQjQRRIC6mefecE7ptYkUNqPtgfr2q/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/5_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="JAPAN TRAIN HEADMARK">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JAPAN TRAIN HEADMARK</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">What you get ? :
+- circle and square shaped headmarks
+- template texture include for circle and square shape
+- available in .b3d file</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1-8nSs_bRP-7psbF8JFCXmkVPZj2Wh536/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/13_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="JR 205 SERIES COWCATCHER V2">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JR 205 SERIES COWCATCHER V2</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">with minor improvement from previous version.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/19oQUz6KtGp1tBSyfK1RnIcwa9hvQeTnb/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/ch_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="JR 205 SERIES COWCATCHER">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JR 205 SERIES COWCATCHER</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​Medium Poly
+
+What you get ?
+- 10 different cowcather object .
+- available in .b3d file</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/10J-pw9dN5SqpIlpyRQlmFqndKGqVOPj-" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/10J-pw9dN5SqpIlpyRQlmFqndKGqVOPj-" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/a_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="KALOG 40FT">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">KALOG 40FT</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Static object, Include HD texture.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+            <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
+                <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+            </div>
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/ac-int_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="LOCOMOTIVE INTERIOR AC">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">LOCOMOTIVE INTERIOR AC</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​This is a air conditioner put inside cabin of indonesia locomotive.
+for exterior part of this air conditioner object, make sure to check AESTHETIC ADDONS website.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/197La9B0MyHhuQJERHraN6W8gHzuk3g36" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/197La9B0MyHhuQJERHraN6W8gHzuk3g36" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                     <div class="flex items-center justify-between gap-1.5 group/hash cursor-pointer mt-1.5 transition-all w-full select-none" onclick="copyText('')" title="Click to copy hash">
+                                         <span class="text-[7.5px] font-bold text-muted/65 group-hover/hash:text-main leading-none uppercase tracking-wider">SHA Hash</span>
+                                         <svg class="w-3 h-3 text-muted/40 group-hover/hash:text-main transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                                         </svg>
+                                     </div>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/14_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="PJL GESER YOGYAKARTA">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">PJL GESER YOGYAKARTA</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">The most unique level crossing in yogyakarta that slide right and left instead up and down.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1AJ-eklZYu8KNcLzhhILmMPwvchgm84ae/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/9_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="SOLO STABLING AREA">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">SOLO STABLING AREA</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Area for train to rest in solo station</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1CO0Wi6EvpkWr6YqQ2kKanzUhadg4-HdC/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/6_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="TOSHIBA RPU 6035V AC">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">TOSHIBA RPU 6035V AC</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">(used on PT INKA KUJR)
+HD ver : 3000~ poly
+LD ver : 124 poly</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+            <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
+                <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">* That image just a joke.</span>
+            </div>
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/198roa6A_jiZ1tMagbdV1y_7HvEHcy3cb/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/198roa6A_jiZ1tMagbdV1y_7HvEHcy3cb/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/11_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="TR241B BOGIE">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">TR241B BOGIE</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">A bogie used in JR205 6doors car.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/18byvDUyclqMRVbj9R_pvlqCgp46hYXvV/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/7_orig.png" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="TRAIN CONNECTOR / ACCORDION">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">TRAIN CONNECTOR / ACCORDION</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">HD ver : 900~ poly
+LD ver : 16 poly</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/19XKioa79Gi__cYCAbo5L3Tfnk1QRVjsP/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/19XKioa79Gi__cYCAbo5L3Tfnk1QRVjsP/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     
+                                 </div>
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full">
+    <!-- Preview -->
+    <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
+        
+            <img src="https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/video-project-4_orig.gif" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="Windshield Wiper">
+        
+    </div>
+    <!-- Info -->
+    <div class="p-8 pt-2 flex-1 flex flex-col">
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Windshield Wiper</h3>
+        <div class="description-container relative mb-6">
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Smooth animated wiper that can be triggered by reverser notch position.</p>
+            
+        </div>
+        <div class="mt-auto flex flex-col">
+            
+
+            <!-- Downloads -->
+            <div class="pt-6 border-t border-border-theme">
+             
+             
+                 
+             
+
+             
+                 <div class="flex flex-row gap-4">
+                     
+                     
+                     
+                     <div class="flex-1 flex flex-col min-w-0">
+                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <div class="flex flex-col gap-1.5">
+                             
+                                 <div class="flex flex-col">
+                                     <a href="https://drive.google.com/file/d/1cl3gLR-RfiYv_OrbPD4OXgl9Pg43_Y1E/view?usp=sharing" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     
+                                 </div>
+                             
+                             
+                         </div>
+                     </div>
+                     
+
+                     
+
+                     
+                 </div>
+             
+         </div>
+     </div>
+</div>
+
+                
+            
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleDescription(btn) {
+    const textEl = btn.previousElementSibling;
+    if (textEl.classList.contains("line-clamp-2")) {
+        textEl.classList.remove("line-clamp-2");
+        btn.textContent = "Read Less";
+    } else {
+        textEl.classList.add("line-clamp-2");
+        btn.textContent = "Read More";
+    }
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-dark pt-32 pb-12 border-t border-border-theme">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+                <div class="md:col-span-4">
+                    <div class="logo mb-8 text-main">
+                        PROGRESSIVE ADDON
+                    </div>
+                    <p class="text-muted text-sm leading-relaxed max-w-sm">
+                        High-premium rail simulation contents, professional tools, and experiments for OpenBVE, BVE5, and Trainz enthusiasts.
+                    </p>
+                </div>
+
+                <div class="md:col-span-2 md:offset-1">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">RESOURCES</h4>
+                    <ul class="space-y-4">
+                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors">Addon Library</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Blender Tools</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">COMMUNITY</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Discord Server</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">GitHub Repository</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">YouTube Channel</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">SUPPORT</h4>
+                    <ul class="space-y-4">
+                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-border-theme flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
+                    &copy; 2026 PROGRESSIVE ADDON.
+                </div>
+                <div class="flex gap-8 text-muted/40">
+                    <a href="#" class="hover:text-main transition-colors">FB</a>
+                    <a href="#" class="hover:text-main transition-colors">TW</a>
+                    <a href="#" class="hover:text-main transition-colors">YT</a>
+                </div>
+                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
+                    RAIL SIMULATION CONTENT REPOSITORY
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

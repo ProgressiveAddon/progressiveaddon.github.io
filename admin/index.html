@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager | ProgressiveAddon</title>
+  <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+</head>
+
+<body>
+  <!-- Include the script that builds the page and powers Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    // Load Tailwind styles inside iframe
+    CMS.registerPreviewStyle("/assets/css/style.css");
+
+    // Custom preview for Addons
+    var AddonPreview = createClass({
+      getInitialState: function () {
+        return { theme: 'dark' };
+      },
+      toggleTheme: function () {
+        this.setState({ theme: this.state.theme === 'dark' ? 'light' : 'dark' });
+      },
+      render: function () {
+        var theme = this.state.theme;
+        var colors = {
+          dark: {
+            bg: '#050505',
+            cardBg: 'rgba(15, 15, 15, 0.6)',
+            cardBorder: 'rgba(120, 120, 120, 0.15)',
+            textMain: '#f5f5f5',
+            textMuted: '#a0a0a0',
+            btnBg: 'rgba(255, 255, 255, 0.05)',
+            btnBorder: 'rgba(120, 120, 120, 0.15)'
+          },
+          light: {
+            bg: '#fdfdfd',
+            cardBg: 'rgba(255, 255, 255, 0.7)',
+            cardBorder: 'rgba(0, 0, 0, 0.08)',
+            textMain: '#1a1a1a',
+            textMuted: '#666666',
+            btnBg: 'rgba(0, 0, 0, 0.05)',
+            btnBorder: 'rgba(0, 0, 0, 0.08)'
+          }
+        }[theme];
+
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || 'Untitled Addon';
+        var description = entry.getIn(['data', 'description']) || 'No description provided.';
+        var image = this.props.getAsset(entry.getIn(['data', 'image']));
+        var notice = entry.getIn(['data', 'notice']) || '';
+ 
+        var download = entry.getIn(['data', 'download']) || '';
+        var downloadLabel = entry.getIn(['data', 'download_label']) || 'Download';
+        var downloadHash = entry.getIn(['data', 'download_hash']) || '';
+        var download2 = entry.getIn(['data', 'download_2']) || '';
+        var download2Label = entry.getIn(['data', 'download_2_label']) || 'Download 2';
+        var downloadHash2 = entry.getIn(['data', 'download_hash_2']) || '';
+        var bveHigh = entry.getIn(['data', 'bve_high']) || '';
+        var bveHighHash = entry.getIn(['data', 'bve_high_hash']) || '';
+        var bveLow = entry.getIn(['data', 'bve_low']) || '';
+        var bveLowHash = entry.getIn(['data', 'bve_low_hash']) || '';
+        var bvetsHigh = entry.getIn(['data', 'bvets_high']) || '';
+        var bvetsHighHash = entry.getIn(['data', 'bvets_high_hash']) || '';
+        var bvetsLow = entry.getIn(['data', 'bvets_low']) || '';
+        var bvetsLowHash = entry.getIn(['data', 'bvets_low_hash']) || '';
+        var trainzHigh = entry.getIn(['data', 'trainz_high']) || '';
+        var trainzHighHash = entry.getIn(['data', 'trainz_high_hash']) || '';
+        var trainzLow = entry.getIn(['data', 'trainz_low']) || '';
+        var trainzLowHash = entry.getIn(['data', 'trainz_low_hash']) || '';
+ 
+        var hasDownloads = download || download2 || bveHigh || bveLow || bvetsHigh || bvetsLow || trainzHigh || trainzLow;
+ 
+        var downloadGrid = null;
+        if (hasDownloads) {
+          var downloadCol = download ? h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 } },
+            h('span', { style: { fontSize: '8px', fontWeight: '900', color: colors.textMain, textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.1em', fontFamily: '"Plus Jakarta Sans", sans-serif' } }, downloadLabel),
+            h('div', { style: { display: 'flex', flexDirection: 'column', gap: '8px' } },
+              h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { href: download, style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', background: colors.textMain, color: colors.bg, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, downloadLabel),
+                downloadHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              )
+            )
+          ) : null;
+
+          var download2Col = download2 ? h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 } },
+            h('span', { style: { fontSize: '8px', fontWeight: '900', color: colors.textMain, textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.1em', fontFamily: '"Plus Jakarta Sans", sans-serif' } }, download2Label),
+            h('div', { style: { display: 'flex', flexDirection: 'column', gap: '8px' } },
+              h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { href: download2, style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', background: colors.textMain, color: colors.bg, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, download2Label),
+                downloadHash2 ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              )
+            )
+          ) : null;
+
+          var bveCol = (bveHigh || bveLow) ? h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 } },
+            h('span', { style: { fontSize: '8px', fontWeight: '900', color: '#3387a2', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.1em', fontFamily: '"Plus Jakarta Sans", sans-serif' } }, 'OpenBVE'),
+            h('div', { style: { display: 'flex', flexDirection: 'column', gap: '8px' } },
+              bveHigh ? h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', background: colors.textMain, color: colors.bg, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, 'High Ver'),
+                bveHighHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              ) : null,
+              bveLow ? h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', border: '1px solid ' + colors.btnBorder, color: colors.textMuted, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, 'Low Ver'),
+                bveLowHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              ) : null
+            )
+          ) : null;
+ 
+          var bvetsCol = (bvetsHigh || bvetsLow) ? h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 } },
+            h('span', { style: { fontSize: '8px', fontWeight: '900', color: '#6cb83a', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.1em', fontFamily: '"Plus Jakarta Sans", sans-serif' } }, 'BVETS'),
+            h('div', { style: { display: 'flex', flexDirection: 'column', gap: '8px' } },
+              bvetsHigh ? h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', background: colors.textMain, color: colors.bg, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, 'High Ver'),
+                bvetsHighHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              ) : null,
+              bvetsLow ? h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', border: '1px solid ' + colors.btnBorder, color: colors.textMuted, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, 'Low Ver'),
+                bvetsLowHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              ) : null
+            )
+          ) : null;
+ 
+          var trainzCol = (trainzHigh || trainzLow) ? h('div', { style: { flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 } },
+            h('span', { style: { fontSize: '8px', fontWeight: '900', color: '#f8a000', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '0.1em', fontFamily: '"Plus Jakarta Sans", sans-serif' } }, 'Trainz'),
+            h('div', { style: { display: 'flex', flexDirection: 'column', gap: '8px' } },
+              trainzHigh ? h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', background: colors.textMain, color: colors.bg, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, 'High Ver'),
+                trainzHighHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              ) : null,
+              trainzLow ? h('div', { style: { display: 'flex', flexDirection: 'column' } },
+                h('a', { style: { fontSize: '6px', fontWeight: '900', padding: '6px 4px', border: '1px solid ' + colors.btnBorder, color: colors.textMuted, textDecoration: 'none', textAlign: 'center', borderRadius: '4px', fontFamily: 'monospace' } }, 'Low Ver'),
+                trainzLowHash ? h('div', { style: { display: 'flex', alignItems: 'center', justifyContent: 'between', gap: '4px', marginTop: '6px', width: '100%', userSelect: 'none' } },
+                  h('span', { style: { fontSize: '5.5px', fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 'bold', color: colors.textMuted, flex: 1, textTransform: 'uppercase', letterSpacing: '0.05em' } }, 'SHA Hash'),
+                  h('svg', { style: { width: '8px', height: '8px', color: colors.textMuted, opacity: 0.5, flexShrink: 0 }, fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor' },
+                    h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3' })
+                  )
+                ) : null
+              ) : null
+            )
+          ) : null;
+  
+          downloadGrid = h('div', { style: { display: 'flex', flexDirection: 'row', gap: '1rem' } }, downloadCol, download2Col, bveCol, bvetsCol, trainzCol);
+        } else {
+          downloadGrid = h('div', {
+            style: {
+              fontSize: '9px',
+              fontWeight: '800',
+              color: colors.textMuted,
+              textTransform: 'uppercase',
+              letterSpacing: '0.2em',
+              textAlign: 'center',
+              padding: '1rem',
+              background: colors.btnBg,
+              borderRadius: '12px',
+              border: '1px solid ' + colors.btnBorder,
+              fontFamily: '"Plus Jakarta Sans", sans-serif'
+            }
+          }, 'No downloads available');
+        }
+
+        return h('div', {
+          style: {
+            background: colors.bg,
+            minHeight: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            color: colors.textMain,
+            position: 'relative',
+            transition: 'all 0.5s ease',
+            fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+          }
+        },
+          // Floating Theme Toggle Button
+          h('button', {
+            onClick: this.toggleTheme,
+            style: {
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              padding: '10px 16px',
+              background: colors.btnBg,
+              color: colors.textMain,
+              border: '1px solid ' + colors.btnBorder,
+              borderRadius: '10px',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              fontFamily: '"Plus Jakarta Sans", sans-serif',
+              transition: 'all 0.3s ease'
+            }
+          }, theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'),
+
+          // Card Container
+          h('div', {
+            style: {
+              borderRadius: '40px',
+              background: colors.cardBg,
+              border: '1px solid ' + colors.cardBorder,
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+              width: '100%',
+              maxWidth: '360px',
+              transition: 'all 0.5s ease',
+              boxShadow: theme === 'dark' ? '0 30px 60px rgba(0, 0, 0, 0.5)' : '0 30px 60px rgba(0, 0, 0, 0.1)'
+            }
+          },
+            // Preview Box
+            h('div', {
+              style: {
+                aspectRatio: '16/9',
+                overflow: 'hidden',
+                position: 'relative',
+                background: '#080808',
+                margin: '1rem',
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }
+            },
+              image ? h('img', {
+                src: image.toString(),
+                style: {
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }
+              }) : h('span', {
+                style: {
+                  fontSize: '9px',
+                  fontWeight: '900',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.4em',
+                  color: 'rgba(255, 255, 255, 0.2)'
+                }
+              }, 'No Preview Available')
+            ),
+            // Info
+            h('div', { style: { padding: '2rem', paddingTop: '0.5rem' } },
+              h('h3', {
+                style: {
+                  fontSize: '1.5rem',
+                  fontWeight: '900',
+                  letterSpacing: '-0.02em',
+                  marginBottom: '0.75rem',
+                  color: colors.textMain,
+                  fontFamily: '"Outfit", sans-serif'
+                }
+              }, title),
+              h('p', {
+                style: {
+                  color: colors.textMuted,
+                  fontSize: '0.75rem',
+                  lineHeight: '1.6',
+                  marginBottom: '1.5rem',
+                  fontFamily: '"Plus Jakarta Sans", sans-serif'
+                }
+              }, description),
+              notice ? h('div', {
+                style: {
+                  display: 'flex',
+                  alignItems: 'start',
+                  gap: '10px',
+                  padding: '8px 12px',
+                  borderRadius: '8px',
+                  background: 'rgba(239, 68, 68, 0.1)',
+                  border: '1px solid rgba(239, 68, 68, 0.2)',
+                  color: '#f87171',
+                  marginBottom: '1.5rem'
+                }
+              },
+                h('svg', {
+                  style: { width: '16px', height: '16px', flexShrink: 0, marginTop: '2px' },
+                  fill: 'none',
+                  viewBox: '0 0 24 24',
+                  stroke: 'currentColor'
+                },
+                  h('path', { strokeLinecap: 'round', strokeLinejoin: 'round', strokeWidth: '2.5', d: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' })
+                ),
+                h('span', { style: { fontSize: '9px', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.05em', lineHeight: '1.4' } }, notice)
+              ) : null,
+
+              // Divider
+              h('div', { style: { borderTop: '1px solid ' + colors.cardBorder, marginTop: '1.5rem', marginBottom: '1.5rem' } }),
+
+              // Render dynamic download grid
+              downloadGrid
+            )
+          )
+        );
+      }
+    });
+
+    // Custom preview for Blog Posts
+    var BlogPreview = createClass({
+      getInitialState: function () {
+        return { theme: 'dark' };
+      },
+      toggleTheme: function () {
+        this.setState({ theme: this.state.theme === 'dark' ? 'light' : 'dark' });
+      },
+      render: function () {
+        var theme = this.state.theme;
+        var colors = {
+          dark: {
+            bg: '#050505',
+            text: '#f5f5f5',
+            muted: '#a0a0a0',
+            border: 'rgba(120, 120, 120, 0.15)',
+            btnBg: 'rgba(255, 255, 255, 0.05)',
+            btnBorder: 'rgba(120, 120, 120, 0.15)'
+          },
+          light: {
+            bg: '#fdfdfd',
+            text: '#1a1a1a',
+            muted: '#666666',
+            border: 'rgba(0, 0, 0, 0.08)',
+            btnBg: 'rgba(0, 0, 0, 0.05)',
+            btnBorder: 'rgba(0, 0, 0, 0.08)'
+          }
+        }[theme];
+
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || 'Untitled Post';
+        var date = entry.getIn(['data', 'date']);
+        var formattedDate = date ? new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : '';
+        var image = this.props.getAsset(entry.getIn(['data', 'image']));
+        var body = this.props.widgetFor('body');
+
+        return h('div', {
+          style: {
+            background: colors.bg,
+            color: colors.text,
+            minHeight: '100vh',
+            padding: '2rem',
+            position: 'relative',
+            transition: 'all 0.5s ease',
+            fontFamily: '"Plus Jakarta Sans", "Outfit", sans-serif'
+          }
+        },
+          h('style', {}, `
+            .post-content h1, .post-content h2, .post-content h3 { font-family: 'Outfit', sans-serif; font-weight: 900; color: ${colors.text}; margin-top: 2.5rem; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+            .post-content h2 { font-size: 1.75rem; }
+            .post-content h3 { font-size: 1.4rem; }
+            .post-content p { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.875rem; line-height: 1.8; color: ${colors.muted}; margin-bottom: 1.5rem; }
+            .post-content img { max-width: 100%; height: auto; border-radius: 16px; margin: 2rem 0; display: block; border: 1px solid ${colors.border}; }
+            .post-content strong { color: ${colors.text}; font-weight: 800; }
+            .post-content ul { list-style-type: square; margin-left: 1.5rem; margin-bottom: 1.5rem; color: ${colors.muted}; }
+            .post-content ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.5rem; color: ${colors.muted}; }
+            .post-content li { margin-bottom: 0.75rem; line-height: 1.7; }
+            .post-content a { color: #3387a2; text-decoration: none; border-bottom: 1px dashed #3387a2; }
+            .post-content blockquote { border-left: 3px solid #3387a2; padding-left: 1.5rem; margin: 2rem 0; font-style: italic; color: ${colors.text}; }
+          `),
+          // Floating Theme Toggle Button
+          h('button', {
+            onClick: this.toggleTheme,
+            style: {
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              padding: '10px 16px',
+              background: colors.btnBg,
+              color: colors.text,
+              border: '1px solid ' + colors.btnBorder,
+              borderRadius: '10px',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              fontFamily: '"Plus Jakarta Sans", sans-serif',
+              transition: 'all 0.3s ease'
+            }
+          }, theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'),
+
+          h('div', { style: { maxWidth: '768px', margin: '0 auto' } },
+            h('span', { style: { fontSize: '9px', fontWeight: '900', color: colors.muted, letterSpacing: '0.12em', textTransform: 'uppercase', display: 'block', marginBottom: '2rem' } }, '← Back to Blog'),
+            h('h1', { style: { fontSize: '2.5rem', fontWeight: '900', color: colors.text, marginBottom: '1.5rem', lineHeight: '1.2', fontFamily: '"Outfit", sans-serif' } }, title),
+            formattedDate ? h('div', { style: { fontSize: '10px', fontWeight: '700', color: colors.muted, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '2rem' } }, formattedDate) : null,
+            image ? h('div', { style: { aspectRatio: '16/9', width: '100%', borderRadius: '16px', overflow: 'hidden', marginBottom: '3rem', border: '1px solid ' + colors.border, boxShadow: theme === 'dark' ? '0 30px 60px rgba(0, 0, 0, 0.5)' : '0 30px 60px rgba(0, 0, 0, 0.1)' } },
+              h('img', { src: image.toString(), style: { width: '100%', height: '100%', objectFit: 'cover' } })
+            ) : null,
+            h('article', { className: 'post-content', style: { color: colors.muted, fontSize: '0.875rem', lineHeight: '1.8' } }, body)
+          )
+        );
+      }
+    });
+
+    // Register live preview for all collections
+    CMS.registerPreviewTemplate("dmu", AddonPreview);
+    CMS.registerPreviewTemplate("emu", AddonPreview);
+    CMS.registerPreviewTemplate("routes", AddonPreview);
+    CMS.registerPreviewTemplate("objects", AddonPreview);
+    CMS.registerPreviewTemplate("car_trainset", AddonPreview);
+    CMS.registerPreviewTemplate("special_unit", AddonPreview);
+    CMS.registerPreviewTemplate("mesh", AddonPreview);
+    CMS.registerPreviewTemplate("plugin", AddonPreview);
+    CMS.registerPreviewTemplate("dependency", AddonPreview);
+    CMS.registerPreviewTemplate("archive", AddonPreview);
+    CMS.registerPreviewTemplate("blog", BlogPreview);
+  </script>
+</body>
+
+</html>
