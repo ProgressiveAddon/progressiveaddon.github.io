@@ -99,24 +99,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile dropdown handler
-    const dropdown = document.querySelector('.dropdown');
-    const dropdownTrigger = document.querySelector('.dropdown-trigger');
-    if (dropdown && dropdownTrigger) {
-        dropdownTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                if (!dropdown.classList.contains('js-open')) {
-                    e.preventDefault();
-                    dropdown.classList.add('js-open');
+    // Mobile dropdown handler (for all dropdowns)
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const dropdownTrigger = dropdown.querySelector('.dropdown-trigger');
+        if (dropdownTrigger) {
+            dropdownTrigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    if (!dropdown.classList.contains('js-open')) {
+                        e.preventDefault();
+                        // Close other open dropdowns first
+                        dropdowns.forEach(d => {
+                            if (d !== dropdown) d.classList.remove('js-open');
+                        });
+                        dropdown.classList.add('js-open');
+                    }
                 }
-            }
-        });
+            });
+        }
+    });
 
-        document.addEventListener('click', (e) => {
+    document.addEventListener('click', (e) => {
+        dropdowns.forEach(dropdown => {
             if (!dropdown.contains(e.target)) {
                 dropdown.classList.remove('js-open');
             }
         });
-    }
+    });
 });
 
 window.showToast = function(message) {

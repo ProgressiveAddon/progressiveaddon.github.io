@@ -878,12 +878,16 @@ nav a.active {
   .site-header {
     flex-direction: column;
     gap: 20px;
-    padding-top: 20px;
+    padding: 20px 16px;
   }
 
   .site-header nav {
     position: static;
     transform: none;
+  }
+
+  nav a {
+    padding: 6px 12px;
   }
 
   .hero-title {
@@ -953,8 +957,8 @@ nav a.active {
 
 .theme-toggle-floating {
   position: fixed;
-  bottom: 40px;
-  right: 40px;
+  bottom: 25px;
+  right: 30px;
   width: 56px;
   height: 56px;
   background: var(--glass-bg);
@@ -1078,6 +1082,20 @@ nav a.active {
 .btn-outline:hover {
   background: white;
   color: #050505;
+}
+
+/* Override SocioBuzz button size to make it smaller on screen */
+
+#button-on-website-sb,
+.button-on-website-sb,
+[id*="sociabuzz"],
+[class*="sociabuzz"],
+[id*="sbBoW"],
+[class*="sbBoW"] {
+  transform: scale(0.75) !important;
+  transform-origin: bottom left !important;
+  margin-bottom: 12px !important;
+  margin-left: 12px !important;
 }
 
 .pointer-events-none {
