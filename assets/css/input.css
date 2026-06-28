@@ -19,6 +19,7 @@
     --radius-pill: 100px;
     --radius-squircle: 40px;
     /* Slightly tighter radius */
+    --dropdown-bg: rgba(10, 10, 10, 0.82);
 }
 
 [data-theme="light"] {
@@ -27,6 +28,7 @@
     --text-muted: #666666;
     --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.08);
+    --dropdown-bg: rgba(255, 255, 255, 0.85);
 }
 
 * {
@@ -82,8 +84,6 @@ nav {
     display: flex;
     gap: 4px;
     background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--glass-border);
     padding: 5px;
     border-radius: var(--radius-pill);
@@ -127,9 +127,9 @@ nav a.active {
     transform: translateX(-50%) translateY(10px);
     opacity: 0;
     visibility: hidden;
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--dropdown-bg);
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 8px;

@@ -31,13 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (header) {
             if (window.scrollY > 50) {
                 header.style.padding = '12px 5%';
-                header.style.background = 'var(--glass-bg)';
-                header.style.backdropFilter = 'blur(var(--glass-blur))';
+                header.style.background = 'var(--bg-dark)';
                 header.style.borderBottom = '1px solid var(--glass-border)';
             } else {
                 header.style.padding = '24px 5%';
                 header.style.background = 'transparent';
-                header.style.backdropFilter = 'none';
                 header.style.borderBottom = 'none';
             }
         }
