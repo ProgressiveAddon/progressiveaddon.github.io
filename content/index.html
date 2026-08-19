@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content - ProgressiveAddon</title>
-    <meta name="description" content="Explore our collection of train simulator addons, objects, and plugins.">
     
+    
+    <title>Content Library - ProgressiveAddon</title>
+    
+    <meta name="description" content="Explore our collection of train simulator addons including diesel multiple units, special vehicles, 3D objects, meshes, and plugins for OpenBVE, BVETS, and Trainz.">
+    <link rel="canonical" href="https://progressiveaddon.github.io/content/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Content Library - ProgressiveAddon">
+    <meta property="og:description" content="Explore our collection of train simulator addons including diesel multiple units, special vehicles, 3D objects, meshes, and plugins for OpenBVE, BVETS, and Trainz.">
+    <meta property="og:url" content="https://progressiveaddon.github.io/content/">
+    <meta property="og:site_name" content="ProgressiveAddon">
+    
+        <meta property="og:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Content Library - ProgressiveAddon">
+    <meta name="twitter:description" content="Explore our collection of train simulator addons including diesel multiple units, special vehicles, 3D objects, meshes, and plugins for OpenBVE, BVETS, and Trainz.">
+    
+        <meta name="twitter:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ProgressiveAddon",
+        "url": "https://progressiveaddon.github.io",
+        "description": "High-premium train simulator addons for OpenBVE, BVETS, and Trainz"
+    }
+    </script>
+    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
     
@@ -17,10 +53,8 @@
     
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /* Extra polish for scroll smoothness */
         html { scroll-behavior: smooth; }
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        /* Fix for big titles getting cut */
         .category-title {
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.1;
@@ -32,11 +66,12 @@
     <header class="site-header">
         <a href="/" class="logo hidden sm:flex items-center gap-4">
             <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0">
-                <img src="/assets/img/logo.svg" alt="PA" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
+                <img src="/assets/img/logo.svg" alt="ProgressiveAddon" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
             </span>
             <span class="hidden sm:inline">PROGRESSIVE ADDON</span>
         </a>
-        <nav>
+        <nav data-i18n-nav>
+            <span class="nav-pill"></span>
             
                 
             
@@ -136,7 +171,7 @@
                                     
                                 
                                     
-                                        <a href="/content/dependency/">DEPENDENCY</a>
+                                        <a href="/content/dependency/">DEPENDENCIES</a>
                                     
                                 
                                     
@@ -273,21 +308,49 @@
                 
             
         </nav>
-        <div class="hidden md:block">
-            <a href="/content" class="btn text-[10px] py-2 px-6">LATEST RELEASES</a>
+        <div class="hidden md:flex items-center gap-3">
+            <div class="lang-switcher">
+                <button class="lang-switcher-btn" aria-label="Change language">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span class="lang-current">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button class="lang-option" data-lang="en">EN</button>
+                    <button class="lang-option" data-lang="id">ID</button>
+                    <button class="lang-option" data-lang="ja">JA</button>
+                </div>
+            </div>
+            <a href="/content" class="btn text-[10px] py-2 px-6" data-i18n="nav.latest">LATEST RELEASES</a>
         </div>
     </header>
 
     <!-- Theme Toggle -->
     <div id="theme-toggle" class="theme-toggle-floating">
-        <span id="theme-icon">🌙</span>
+        <svg id="icon-sun" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
     </div>
 
     <main>
         <section class="relative overflow-hidden pt-36 pb-6 md:pt-48 md:pb-20">
     <div class="container mx-auto px-6 relative z-10 text-center">
         <h1 class="hero-title mb-6 tracking-tighter">
-            OUR<br><span class="opacity-50">WORKS</span>
+            <span data-i18n="content.hero.title1">OUR</span><br><span class="opacity-50" data-i18n="content.hero.title2">WORKS</span>
         </h1>
     </div>
 </section>
@@ -307,10 +370,10 @@
 <div class="bg-text">DMU</div>
 </div>
 <div class="p-8 pt-0">
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase">Category</span>
-<h3 class="category-title font-black mb-3">DIESEL MULTIPLE UNIT</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">KRD, KRDE, and KRDH units with realistic physics and sounds.</p>
-<a href="/content/dmu/" class="btn text-[9px] py-3 px-6 w-fit">View Collection</a>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase" data-i18n="content.category">Category</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.dmu.title">DIESEL MULTIPLE UNIT</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.dmu.desc">KRD, KRDE, and KRDH units with realistic physics and sounds.</p>
+<a href="/content/dmu/" class="btn text-[9px] py-3 px-6 w-fit" data-i18n="content.view_collection">View Collection</a>
 </div>
 </div>
 </div></p>
@@ -321,10 +384,10 @@
 <div class="bg-text">EMU</div>
 </div>
 <div class="p-8 pt-0">
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase">Category</span>
-<h3 class="category-title font-black mb-3">ELECTRIC MULTIPLE UNIT</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">Electronic units and commuter trainsets.</p>
-<span class="text-[9px] font-black text-muted/40 uppercase tracking-widest">Coming Soon</span>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase" data-i18n="content.category">Category</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.emu.title">ELECTRIC MULTIPLE UNIT</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.emu.desc">Electronic units and commuter trainsets.</p>
+<span class="text-[9px] font-black text-muted/40 uppercase tracking-widest" data-i18n="content.coming_soon">Coming Soon</span>
 </div>
 </div>
 </div></p>
@@ -335,10 +398,10 @@
 <div class="bg-text">SPECIAL</div>
 </div>
 <div class="p-8 pt-0">
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase">Category</span>
-<h3 class="category-title font-black mb-3">SPECIAL UNIT</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">Maintenance vehicles, KAIS, and crane units.</p>
-<a href="/content/special-unit" class="btn text-[9px] py-3 px-6 w-fit">View Collection</a>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase" data-i18n="content.category">Category</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.special.title">SPECIAL UNIT</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.special.desc">Maintenance vehicles, KAIS, and crane units.</p>
+<a href="/content/special-unit" class="btn text-[9px] py-3 px-6 w-fit" data-i18n="content.view_collection">View Collection</a>
 </div>
 </div>
 </div></p>
@@ -349,10 +412,10 @@
 <div class="bg-text">OBJECT</div>
 </div>
 <div class="p-8 pt-0">
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase">Category</span>
-<h3 class="category-title font-black mb-3">OBJECTS</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">Static objects for route building and environment details.</p>
-<a href="/content/objects" class="btn text-[9px] py-3 px-6 w-fit">View Collection</a>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase" data-i18n="content.category">Category</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.objects.title">OBJECTS</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.objects.desc">Static objects for route building and environment details.</p>
+<a href="/content/objects" class="btn text-[9px] py-3 px-6 w-fit" data-i18n="content.view_collection">View Collection</a>
 </div>
 </div>
 </div></p>
@@ -363,10 +426,10 @@
 <div class="bg-text">3D MESH</div>
 </div>
 <div class="p-8 pt-0">
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-4 block uppercase">Category</span>
-<h3 class="category-title font-black mb-3">3D MESH</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">Raw 3D models for creators and developers.</p>
-<a href="/content/3d-mesh" class="btn text-[9px] py-3 px-6 w-fit">View Collection</a>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-4 block uppercase" data-i18n="content.category">Category</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.mesh.title">3D MESH</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.mesh.desc">Raw 3D models for creators and developers.</p>
+<a href="/content/3d-mesh" class="btn text-[9px] py-3 px-6 w-fit" data-i18n="content.view_collection">View Collection</a>
 </div>
 </div>
 </div></p>
@@ -377,10 +440,10 @@
 <div class="bg-text">PLUGIN</div>
 </div>
 <div class="p-8 pt-0">
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-4 block uppercase">Category</span>
-<h3 class="category-title font-black mb-3">PLUGINS</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">Custom plugins for enhanced simulator functionality.</p>
-<a href="/content/plugin" class="btn text-[9px] py-3 px-6 w-fit">View Collection</a>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-4 block uppercase" data-i18n="content.category">Category</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.plugins.title">PLUGINS</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.plugins.desc">Custom plugins for enhanced simulator functionality.</p>
+<a href="/content/plugin" class="btn text-[9px] py-3 px-6 w-fit" data-i18n="content.view_collection">View Collection</a>
 </div>
 </div>
 </div>
@@ -398,11 +461,11 @@
                     </div>
                     <div class="p-8 flex-1 flex flex-col justify-between">
                         <div>
-                            <span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase">Collection</span>
-                            <h3 class="category-title font-black mb-3">PAYWARE CONTENT</h3>
-                            <p class="text-muted text-xs leading-relaxed mb-6">Premium high-quality addon packages with detailed assets.</p>
+                            <span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase" data-i18n="content.collection">Collection</span>
+                            <h3 class="category-title font-black mb-3" data-i18n="content.payware.title">PAYWARE CONTENT</h3>
+                            <p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.payware.desc">Premium high-quality addon packages with detailed assets.</p>
                         </div>
-                        <button class="btn-outline opacity-50 cursor-not-allowed w-full py-3 text-[9px] border-main/20" disabled>Unavailable</button>
+                        <button class="btn-outline opacity-50 cursor-not-allowed w-full py-3 text-[9px] border-main/20" disabled data-i18n="content.payware.unavailable">Unavailable</button>
                     </div>
                 </div>
             </div>
@@ -414,11 +477,11 @@
 </div>
 <div class="p-8 flex-1 flex flex-col justify-between">
 <div>
-<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase">Collection</span>
-<h3 class="category-title font-black mb-3">ARCHIVED ADDONS</h3>
-<p class="text-muted text-xs leading-relaxed mb-6">Legacy addons and older releases from previous project versions.</p>
+<span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-3 block uppercase" data-i18n="content.collection">Collection</span>
+<h3 class="category-title font-black mb-3" data-i18n="content.archive.title">ARCHIVED ADDONS</h3>
+<p class="text-muted text-xs leading-relaxed mb-6" data-i18n="content.archive.desc">Legacy addons and older releases from previous project versions.</p>
 </div>
-<a href="/archive" class="btn bg-main text-bg-dark hover:opacity-90 w-full py-3 text-[9px] text-center block">Explore Collection</a>
+<a href="/archive" class="btn bg-main text-bg-dark hover:opacity-90 w-full py-3 text-[9px] text-center block" data-i18n="content.archive.explore">Explore Collection</a>
 </div>
 </div>
 </div>
@@ -429,24 +492,28 @@
     <div class="container mx-auto px-6">
         <div class="glass-card glass-card-section bg-gradient-to-b from-main/[0.02] to-transparent overflow-hidden flex flex-col md:flex-row items-center gap-12 text-left relative">
             <div class="w-full md:w-2/3 relative z-10">
-                <span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-4 block uppercase">Essential</span>
-                <h2 class="text-3xl font-black mb-4 tracking-tight text-main">DEPENDENCY</h2>
-                <p class="text-muted text-sm leading-relaxed mb-8 max-w-lg">
+                <span class="text-[9px] font-black tracking-[0.3em] text-muted/40 mb-4 block uppercase" data-i18n="content.dependency.essential">Essential</span>
+                <h2 class="text-3xl font-black mb-4 tracking-tight text-main" data-i18n="content.dependency.title">DEPENDENCY</h2>
+                <p class="text-muted text-sm leading-relaxed mb-8 max-w-lg" data-i18n="content.dependency.desc">
                     Essential files required for our addons to run perfectly. Make sure to download these first before installing any trainsets.
                 </p>
-                <a href="/content/dependency" class="btn px-10 py-4 text-[10px]">Download Dependencies</a>
+                <a href="/content/dependency" class="btn px-10 py-4 text-[10px]" data-i18n="content.dependency.download">Download Dependencies</a>
             </div>
         </div>
     </div>
 </section>
 <section class="notice-section">
-    <div class="info-icon">i</div>
-    <div class="notice-text">
-        <p>Dengan mengakses dan mengunduh konten di website kami anda tunduk dan setuju dengan syarat dan ketentuan di website ini.</p>
-        <p>By accessing and downloading content on our website you are subject to and agree with the terms and conditions on this website.</p>
-        <p>当ウェブサイトにアクセスし、コンテンツをダウンロードすることにより、お客様は当ウェブサイトに記載された条件に従うものとし、これに同意するものとします。</p>
+    <div class="info-icon">
+        <svg width="32" height="32" viewBox="0 0 260 260" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M145.94 47.09c4.84.01 8.93 1.68 12.25 5.04 3.32 3.36 4.98 7.42 4.98 12.19 0 4.77-1.68 8.83-5.04 12.19-3.36 3.36-7.42 5.04-12.19 5.04-4.69 0-8.71-1.68-12.07-5.04-3.36-3.36-5.04-7.42-5.04-12.19 0-4.77 1.68-8.83 5.04-12.19 3.32-3.36 7.36-5.03 12.13-5.04zm7.27 53.91-24.02 83.32c-1.33 4.77-1.99 7.89-1.99 9.38 0 .86.35 1.66 1.05 2.4.7.74 1.45 1.11 2.23 1.11 1.33 0 2.66-.59 3.98-1.76 3.52-2.89 7.73-8.12 12.66-15.7l3.98 2.34c-11.8 20.55-24.34 30.82-37.62 30.82-5.08 0-9.12-1.43-12.13-4.28-3.01-2.85-4.51-6.46-4.51-10.84 0-2.89.66-6.56 1.99-11.02l16.29-56.02c1.56-5.39 2.34-9.45 2.34-12.19 0-1.72-.74-3.24-2.23-4.57-1.48-1.33-3.52-1.99-6.09-1.99-1.17 0-2.58.04-4.22.12l1.52-4.69 39.73-6.45z"/>
+        </svg>
     </div>
-    <a href="/about" class="btn-outline">LEARN MORE | PELAJARI LEBIH LANJUT</a>
+    <div class="notice-text">
+        <p data-i18n="notice.id">Dengan mengakses dan mengunduh konten di website kami anda tunduk dan setuju dengan syarat dan ketentuan di website ini.</p>
+        <p data-i18n="notice.en">By accessing and downloading content on our website you are subject to and agree with the terms and conditions on this website.</p>
+        <p data-i18n="notice.ja">当ウェブサイトにアクセスし、コンテンツをダウンロードすることにより、お客様は当ウェブサイトに記載された条件に従うものとし、これに同意するものとします。</p>
+    </div>
+    <a href="/about" class="btn-outline" data-i18n="content.notice.learn">LEARN MORE | PELAJARI LEBIH LANJUT</a>
 </section>
 
     </main>
@@ -456,38 +523,38 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
                 <div class="md:col-span-4">
-                    <div class="logo mb-8 text-main">
+                    <div class="logo mb-8 text-main" data-i18n="site.title">
                         PROGRESSIVE ADDON
                     </div>
-                    <p class="text-muted text-sm leading-relaxed max-w-sm">
+                    <p class="text-muted text-sm leading-relaxed max-w-sm" data-i18n="footer.desc">
                         High-premium rail simulation contents, professional tools, and experiments for OpenBVE, BVE5, and Trainz enthusiasts.
                     </p>
                 </div>
 
                 <div class="md:col-span-2 md:offset-1">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">RESOURCES</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.resources">RESOURCES</h4>
                     <ul class="space-y-4">
-                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors">Addon Library</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Blender Tools</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Documentation</a></li>
+                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.addon_library">Addon Library</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.blender_tools">Blender Tools</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.documentation">Documentation</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">COMMUNITY</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.community">COMMUNITY</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Discord Server</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">GitHub Repository</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">YouTube Channel</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.discord">Discord Server</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.github">GitHub Repository</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.youtube">YouTube Channel</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">SUPPORT</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.support">SUPPORT</h4>
                     <ul class="space-y-4">
-                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Privacy Policy</a></li>
+                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.about">About Us</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.contact">Contact</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -496,18 +563,25 @@
                 <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
                     &copy; 2026 PROGRESSIVE ADDON.
                 </div>
-                <div class="flex gap-8 text-muted/40">
-                    <a href="#" class="hover:text-main transition-colors">FB</a>
-                    <a href="#" class="hover:text-main transition-colors">TW</a>
-                    <a href="#" class="hover:text-main transition-colors">YT</a>
+                <div class="flex gap-6 items-center text-muted/40">
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Twitter / X">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="YouTube">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
-                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
+                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest" data-i18n="footer.rights">
                     RAIL SIMULATION CONTENT REPOSITORY
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="/assets/js/i18n.js"></script>
     <script src="/assets/js/main.js"></script>
     <!-- SociaBuzz Donation Button -->
     <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>

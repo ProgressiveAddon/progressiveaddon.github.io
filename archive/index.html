@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archive</title>
-    <meta name="description" content="Legacy releases and older versions of simulation contents.">
     
+    
+    <title>Archive - ProgressiveAddon</title>
+    
+    <meta name="description" content="Download legacy addons, older releases, and archived content from previous versions of OpenBVE, BVETS, and Trainz train simulators.">
+    <link rel="canonical" href="https://progressiveaddon.github.io/archive/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Archive - ProgressiveAddon">
+    <meta property="og:description" content="Download legacy addons, older releases, and archived content from previous versions of OpenBVE, BVETS, and Trainz train simulators.">
+    <meta property="og:url" content="https://progressiveaddon.github.io/archive/">
+    <meta property="og:site_name" content="ProgressiveAddon">
+    
+        <meta property="og:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Archive - ProgressiveAddon">
+    <meta name="twitter:description" content="Download legacy addons, older releases, and archived content from previous versions of OpenBVE, BVETS, and Trainz train simulators.">
+    
+        <meta name="twitter:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ProgressiveAddon",
+        "url": "https://progressiveaddon.github.io",
+        "description": "High-premium train simulator addons for OpenBVE, BVETS, and Trainz"
+    }
+    </script>
+    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
     
@@ -17,10 +53,8 @@
     
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /* Extra polish for scroll smoothness */
         html { scroll-behavior: smooth; }
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        /* Fix for big titles getting cut */
         .category-title {
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.1;
@@ -32,11 +66,12 @@
     <header class="site-header">
         <a href="/" class="logo hidden sm:flex items-center gap-4">
             <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0">
-                <img src="/assets/img/logo.svg" alt="PA" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
+                <img src="/assets/img/logo.svg" alt="ProgressiveAddon" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
             </span>
             <span class="hidden sm:inline">PROGRESSIVE ADDON</span>
         </a>
-        <nav>
+        <nav data-i18n-nav>
+            <span class="nav-pill"></span>
             
                 
             
@@ -136,7 +171,7 @@
                                     
                                 
                                     
-                                        <a href="/content/dependency/">DEPENDENCY</a>
+                                        <a href="/content/dependency/">DEPENDENCIES</a>
                                     
                                 
                                     
@@ -273,14 +308,42 @@
                 
             
         </nav>
-        <div class="hidden md:block">
-            <a href="/content" class="btn text-[10px] py-2 px-6">LATEST RELEASES</a>
+        <div class="hidden md:flex items-center gap-3">
+            <div class="lang-switcher">
+                <button class="lang-switcher-btn" aria-label="Change language">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span class="lang-current">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button class="lang-option" data-lang="en">EN</button>
+                    <button class="lang-option" data-lang="id">ID</button>
+                    <button class="lang-option" data-lang="ja">JA</button>
+                </div>
+            </div>
+            <a href="/content" class="btn text-[10px] py-2 px-6" data-i18n="nav.latest">LATEST RELEASES</a>
         </div>
     </header>
 
     <!-- Theme Toggle -->
     <div id="theme-toggle" class="theme-toggle-floating">
-        <span id="theme-icon">🌙</span>
+        <svg id="icon-sun" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
     </div>
 
     <main>
@@ -313,10 +376,10 @@
                     </svg>
                 </button>
                 <div id="sort-dropdown-menu" class="hidden absolute right-0 mt-2 w-40 rounded-xl bg-[#0a0a0a]/90 backdrop-blur-md border border-border-theme p-1.5 shadow-xl z-20 transition-all origin-top-right">
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="latest">Latest</button>
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="oldest">Oldest</button>
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="az">Title: A - Z</button>
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="za">Title: Z - A</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="latest" data-i18n="collection.sort_latest">Latest</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="oldest" data-i18n="collection.sort_oldest">Oldest</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="az" data-i18n="collection.sort_az">Title: A - Z</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="za" data-i18n="collection.sort_za">Title: Z - A</button>
                 </div>
             </div>
         </div>
@@ -337,19 +400,49 @@
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Akishino Municipal - Nijomachi Line</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Akishino Municipal - Nijomachi Line" data-lang-en="Akishino Municipal - Nijomachi Line" data-lang-id="Akishino Municipal - Nijomachi Line" data-lang-ja="Akishino Municipal - Nijomachi Line">Akishino Municipal - Nijomachi Line</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">
-​Author: ?
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="
+â€‹Author: ?
 Version: 1
 Last Update: 2005-06-04
 Fictional: yes
 Length: 11.6km
 Runs on: BVE4, openBVE
 
-​A fictional underground route with a very good track structure and external sections.</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+â€‹A fictional underground route with a very good track structure and external sections." data-lang-id="
+â€‹Author: ?
+Version: 1
+Last Update: 2005-06-04
+Fictional: yes
+Length: 11.6km
+Runs on: BVE4, openBVE
+
+â€‹A fictional underground route with a very good track structure and external sections." data-lang-ja="
+â€‹Author: ?
+Version: 1
+Last Update: 2005-06-04
+Fictional: yes
+Length: 11.6km
+Runs on: BVE4, openBVE
+
+â€‹A fictional underground route with a very good track structure and external sections.">
+â€‹Author: ?
+Version: 1
+Last Update: 2005-06-04
+Fictional: yes
+Length: 11.6km
+Runs on: BVE4, openBVE
+
+â€‹A fictional underground route with a very good track structure and external sections.</p>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -366,10 +459,10 @@ Runs on: BVE4, openBVE
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://web.archive.org/web/20120405063414/http://www1.odn.ne.jp/meguro.bbs/tetsukenonline.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="https://web.archive.org/web/20120405063414/http://www1.odn.ne.jp/meguro.bbs/tetsukenonline.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -382,14 +475,14 @@ Runs on: BVE4, openBVE
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
 </div>
 
                 
-                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full card-item" data-date="2026-06-27" data-title="ATS-Sn / P​">
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full card-item" data-date="2026-06-27" data-title="ATS-Sn / Pâ€‹">
     <!-- Preview -->
     <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
         
@@ -397,16 +490,40 @@ Runs on: BVE4, openBVE
             
                 
             
-            <img src="https://wsrv.nl/?url=https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/imgunavailable_37.png&w=600&output=webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="ATS-Sn / P​" loading="lazy">
+            <img src="https://wsrv.nl/?url=https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/imgunavailable_37.png&w=600&output=webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="ATS-Sn / Pâ€‹" loading="lazy">
         
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">ATS-Sn / P​</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="ATS-Sn / Pâ€‹" data-lang-en="ATS-Sn / Pâ€‹" data-lang-id="ATS-Sn / Pâ€‹" data-lang-ja="ATS-Sn / Pâ€‹">ATS-Sn / Pâ€‹</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">ATS-Sn / P​
-​Author: ec207
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="ATS-Sn / Pâ€‹
+â€‹Author: ec207
+Version: unknown
+Last Update: 2008-07-30
+Fictional: yes
+Length: ?
+Runs on: BVE4, openBVE" data-lang-id="ATS-Sn / Pâ€‹
+â€‹Author: ec207
+Version: unknown
+Last Update: 2008-07-30
+Fictional: yes
+Length: ?
+Runs on: BVE4, openBVE" data-lang-ja="ATS-Sn / Pâ€‹
+â€‹Author: ec207
+Version: unknown
+Last Update: 2008-07-30
+Fictional: yes
+Length: ?
+Runs on: BVE4, openBVE">ATS-Sn / Pâ€‹
+â€‹Author: ec207
 Version: unknown
 Last Update: 2008-07-30
 Fictional: yes
@@ -423,7 +540,7 @@ Runs on: BVE4, openBVE</p>
              
 
              
-                 <div class="text-[9px] font-bold text-muted/30 uppercase tracking-[0.2em] text-center py-4 bg-main/5 rounded-xl border border-border-theme">
+                   <div class="text-[11px] font-bold text-muted/30 uppercase tracking-[0.2em] text-center py-4 bg-main/5 rounded-xl border border-border-theme" data-i18n="card.no_downloads">
                      No downloads available
                  </div>
              
@@ -446,11 +563,47 @@ Runs on: BVE4, openBVE</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Chashinai Railway</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Chashinai Railway" data-lang-en="Chashinai Railway" data-lang-id="Chashinai Railway" data-lang-ja="Chashinai Railway">Chashinai Railway</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">Chashinai Railway
-​Author: Jens Rügenhagen
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="Chashinai Railway
+â€‹Author: Jens RÃ¼genhagen
+Version: 5.9.1
+Last Update: 2014
+Fictional: yes
+Length: ?
+Runs on: openBVE
+
+Chashinai Railway is a set of six interconnected routes placed in a fictional Japanese-style environment. All routes operate on normal gauge (1435 mm) and make use of ATS and ATC as the train's safety system. Jens emphasis was to create fast-paced routes which are operated frequently, with short distances between the stations, and tight schedules. There is some variation you can encounter, be it local or express runs, available at sunrise, daytime, sunset or at night.
+All of the three fictional types of trains that are in use in the network have been completely redesigned. Their cabs are now based on photographs found at Ellis and Tommy Railroad Page instead of using the old brownish cabs.
+Additionally, some of the forest scenes have been redesigned, and new passengers have been added." data-lang-id="Chashinai Railway
+â€‹Author: Jens RÃ¼genhagen
+Version: 5.9.1
+Last Update: 2014
+Fictional: yes
+Length: ?
+Runs on: openBVE
+
+Chashinai Railway is a set of six interconnected routes placed in a fictional Japanese-style environment. All routes operate on normal gauge (1435 mm) and make use of ATS and ATC as the train's safety system. Jens emphasis was to create fast-paced routes which are operated frequently, with short distances between the stations, and tight schedules. There is some variation you can encounter, be it local or express runs, available at sunrise, daytime, sunset or at night.
+All of the three fictional types of trains that are in use in the network have been completely redesigned. Their cabs are now based on photographs found at Ellis and Tommy Railroad Page instead of using the old brownish cabs.
+Additionally, some of the forest scenes have been redesigned, and new passengers have been added." data-lang-ja="Chashinai Railway
+â€‹Author: Jens RÃ¼genhagen
+Version: 5.9.1
+Last Update: 2014
+Fictional: yes
+Length: ?
+Runs on: openBVE
+
+Chashinai Railway is a set of six interconnected routes placed in a fictional Japanese-style environment. All routes operate on normal gauge (1435 mm) and make use of ATS and ATC as the train's safety system. Jens emphasis was to create fast-paced routes which are operated frequently, with short distances between the stations, and tight schedules. There is some variation you can encounter, be it local or express runs, available at sunrise, daytime, sunset or at night.
+All of the three fictional types of trains that are in use in the network have been completely redesigned. Their cabs are now based on photographs found at Ellis and Tommy Railroad Page instead of using the old brownish cabs.
+Additionally, some of the forest scenes have been redesigned, and new passengers have been added.">Chashinai Railway
+â€‹Author: Jens RÃ¼genhagen
 Version: 5.9.1
 Last Update: 2014
 Fictional: yes
@@ -460,7 +613,7 @@ Runs on: openBVE
 Chashinai Railway is a set of six interconnected routes placed in a fictional Japanese-style environment. All routes operate on normal gauge (1435 mm) and make use of ATS and ATC as the train's safety system. Jens emphasis was to create fast-paced routes which are operated frequently, with short distances between the stations, and tight schedules. There is some variation you can encounter, be it local or express runs, available at sunrise, daytime, sunset or at night.
 All of the three fictional types of trains that are in use in the network have been completely redesigned. Their cabs are now based on photographs found at Ellis and Tommy Railroad Page instead of using the old brownish cabs.
 Additionally, some of the forest scenes have been redesigned, and new passengers have been added.</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -477,10 +630,10 @@ Additionally, some of the forest scenes have been redesigned, and new passengers
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://web.archive.org/web/20141204182110/http://odakyufan.zxq.net/chashinai/index.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="https://web.archive.org/web/20141204182110/http://odakyufan.zxq.net/chashinai/index.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -493,14 +646,14 @@ Additionally, some of the forest scenes have been redesigned, and new passengers
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
 </div>
 
                 
-                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full card-item" data-date="2026-06-27" data-title="Choshi Electric Railway​">
+                    <div class="glass-card flex flex-col group hover:border-main/20 transition-all duration-500 overflow-hidden p-0 w-full card-item" data-date="2026-06-27" data-title="Choshi Electric Railway">
     <!-- Preview -->
     <div class="aspect-video overflow-hidden relative bg-[#080808] m-4 rounded-xl flex items-center justify-center">
         
@@ -508,25 +661,21 @@ Additionally, some of the forest scenes have been redesigned, and new passengers
             
                 
             
-            <img src="https://wsrv.nl/?url=https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/imgunavailable_34.png&w=600&output=webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="Choshi Electric Railway​" loading="lazy">
+            <img src="https://wsrv.nl/?url=https://progressiveaddon.weebly.com/uploads/1/3/8/8/138803856/imgunavailable_34.png&w=600&output=webp" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="Choshi Electric Railway" loading="lazy">
         
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Choshi Electric Railway​</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Choshi Electric Railway" data-lang-en="Choshi Electric Railway" data-lang-id="Choshi Electric Railway" data-lang-ja="Choshi Electric Railway">Choshi Electric Railway</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">Choshi Electric Railway​
-​Author: 湘南電車暴走族
-Version: 2
-Last Update: 2007-01-21
-Fictional: no
-Length: 6.4km
-Runs on: BVE2, openBVE
-
-Name of the route is 銚子電鉄.
-The route generates many errors when loaded with openBVE (particularly due to Japanese characters), but works correctly</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Choshi Electric Railway route for BVE2 and OpenBVE. Fictional route, 6.4km length." data-lang-id="Choshi Electric Railway route for BVE2 and OpenBVE. Fictional route, 6.4km length." data-lang-ja="Choshi Electric Railway route for BVE2 and OpenBVE. Fictional route, 6.4km length.">Choshi Electric Railway route for BVE2 and OpenBVE. Fictional route, 6.4km length.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -543,10 +692,10 @@ The route generates many errors when loaded with openBVE (particularly due to Ja
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://web.archive.org/web/20100402031232/http://be4you.jp:80/krbve/data/Download.html?ikisaki=R_shitetsu_0004.exe" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="https://web.archive.org/web/20100402031232/http://be4you.jp:80/krbve/data/Download.html?ikisaki=R_shitetsu_0004.exe" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -554,10 +703,10 @@ The route generates many errors when loaded with openBVE (particularly due to Ja
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Recommended Trains</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Recommended Trains</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://web.archive.org/web/20090213120726/http://be4you.jp/krbve/data/Download.html?ikisaki=C_shitetsu_0012.exe" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Recommended Trains</a>
+                                 <a href="https://web.archive.org/web/20090213120726/http://be4you.jp/krbve/data/Download.html?ikisaki=C_shitetsu_0012.exe" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Recommended Trains</a>
                                  
                              </div>
                          </div>
@@ -569,7 +718,7 @@ The route generates many errors when loaded with openBVE (particularly due to Ja
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -589,21 +738,57 @@ The route generates many errors when loaded with openBVE (particularly due to Ja
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Crossline Railway</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Crossline Railway" data-lang-en="Crossline Railway" data-lang-id="Crossline Railway" data-lang-ja="Crossline Railway">Crossline Railway</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">Crossline Railway
-​Author: Kou
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="Crossline Railway
+â€‹Author: Kou
 Version: 1
 Last Update: April 4, 2011
 Fictional: yes
 Length: 60
 Runs on: BVE2, openBVE
 
-​A simple route, essentially underground, which has meanwhile quite a good track structure and may represent a good option for testing rolling stock (VMax up to 180 km/h).
+â€‹A simple route, essentially underground, which has meanwhile quite a good track structure and may represent a good option for testing rolling stock (VMax up to 180 km/h).
 
-Click ダウンロード to download.​</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+Click ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ to download.â€‹" data-lang-id="Crossline Railway
+â€‹Author: Kou
+Version: 1
+Last Update: April 4, 2011
+Fictional: yes
+Length: 60
+Runs on: BVE2, openBVE
+
+â€‹A simple route, essentially underground, which has meanwhile quite a good track structure and may represent a good option for testing rolling stock (VMax up to 180 km/h).
+
+Click ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ to download.â€‹" data-lang-ja="Crossline Railway
+â€‹Author: Kou
+Version: 1
+Last Update: April 4, 2011
+Fictional: yes
+Length: 60
+Runs on: BVE2, openBVE
+
+â€‹A simple route, essentially underground, which has meanwhile quite a good track structure and may represent a good option for testing rolling stock (VMax up to 180 km/h).
+
+Click ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ to download.â€‹">Crossline Railway
+â€‹Author: Kou
+Version: 1
+Last Update: April 4, 2011
+Fictional: yes
+Length: 60
+Runs on: BVE2, openBVE
+
+â€‹A simple route, essentially underground, which has meanwhile quite a good track structure and may represent a good option for testing rolling stock (VMax up to 180 km/h).
+
+Click ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ to download.â€‹</p>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -620,10 +805,10 @@ Click ダウンロード to download.​</p>
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://web.archive.org/web/20130205113233/http://bvessj.net/bve/download/dairi/download.php?id=291" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="https://web.archive.org/web/20130205113233/http://bvessj.net/bve/download/dairi/download.php?id=291" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -636,7 +821,7 @@ Click ダウンロード to download.​</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -656,22 +841,61 @@ Click ダウンロード to download.​</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Daihaku Rapid Railway</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Daihaku Rapid Railway" data-lang-en="Daihaku Rapid Railway" data-lang-id="Daihaku Rapid Railway" data-lang-ja="Daihaku Rapid Railway">Daihaku Rapid Railway</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">Daihaku Rapid Railway
-​Author: Team 3-Chome
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="Daihaku Rapid Railway
+â€‹Author: Team 3-Chome
 Version: 1
 Last Update: ?
 Fictional: yes
 Length: ?
 Runs on: BVE2, BVE4, openBVE
 
-Fictional route from Takahama to Aoyanagi.​
+Fictional route from Takahama to Aoyanagi.â€‹
+Download
+Archived
+" data-lang-id="Daihaku Rapid Railway
+â€‹Author: Team 3-Chome
+Version: 1
+Last Update: ?
+Fictional: yes
+Length: ?
+Runs on: BVE2, BVE4, openBVE
+
+Fictional route from Takahama to Aoyanagi.â€‹
+Download
+Archived
+" data-lang-ja="Daihaku Rapid Railway
+â€‹Author: Team 3-Chome
+Version: 1
+Last Update: ?
+Fictional: yes
+Length: ?
+Runs on: BVE2, BVE4, openBVE
+
+Fictional route from Takahama to Aoyanagi.â€‹
+Download
+Archived
+">Daihaku Rapid Railway
+â€‹Author: Team 3-Chome
+Version: 1
+Last Update: ?
+Fictional: yes
+Length: ?
+Runs on: BVE2, BVE4, openBVE
+
+Fictional route from Takahama to Aoyanagi.â€‹
 Download
 Archived
 </p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -688,10 +912,10 @@ Archived
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://web.archive.org/web/20120607070157/http://route.3-chome.com/trainsim/daihaku/" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="https://web.archive.org/web/20120607070157/http://route.3-chome.com/trainsim/daihaku/" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -704,7 +928,7 @@ Archived
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -724,19 +948,28 @@ Archived
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">INDONESIA CONTENT ARCHIVE</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="INDONESIA CONTENT ARCHIVE" data-lang-en="INDONESIA CONTENT ARCHIVE" data-lang-id="INDONESIA CONTENT ARCHIVE" data-lang-ja="INDONESIA CONTENT ARCHIVE">INDONESIA CONTENT ARCHIVE</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">INDONESIA OpenBVE CONTENT ARCHIVE</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="INDONESIA OpenBVE CONTENT ARCHIVE" data-lang-id="INDONESIA OpenBVE CONTENT ARCHIVE" data-lang-ja="INDONESIA OpenBVE CONTENT ARCHIVE">INDONESIA OpenBVE CONTENT ARCHIVE</p>
             
         </div>
         <div class="mt-auto flex flex-col">
+            
+            
+            
             
             <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
                 <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
-                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Mainly Aesthetic Addon archive</span>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed" data-lang-en="Mainly Aesthetic Addon archive" data-lang-id="Mainly Aesthetic Addon archive" data-lang-ja="Mainly Aesthetic Addon archive">Mainly Aesthetic Addon archive</span>
             </div>
             
 
@@ -751,10 +984,10 @@ Archived
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Download</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Download</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="https://progressiveaddon.weebly.com/aesthetic-bve-archive.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Download</a>
+                                 <a href="https://progressiveaddon.weebly.com/aesthetic-bve-archive.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Download</a>
                                  
                              </div>
                          </div>
@@ -767,7 +1000,7 @@ Archived
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -787,10 +1020,19 @@ Archived
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Shinkansen Series 0</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Shinkansen Series 0" data-lang-en="Shinkansen Series 0" data-lang-id="Shinkansen Series 0" data-lang-ja="Shinkansen Series 0">Shinkansen Series 0</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Author: Manuel mejias
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Author: Manuel mejias
+Runs on: OpenBVE" data-lang-id="Author: Manuel mejias
+Runs on: OpenBVE" data-lang-ja="Author: Manuel mejias
+Runs on: OpenBVE">Author: Manuel mejias
 Runs on: OpenBVE</p>
             
         </div>
@@ -808,10 +1050,10 @@ Runs on: OpenBVE</p>
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -819,10 +1061,10 @@ Runs on: OpenBVE</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Download 2</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Download 2</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Download</a>
+                                 <a href="" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Download</a>
                                  
                              </div>
                          </div>
@@ -834,7 +1076,7 @@ Runs on: OpenBVE</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -854,10 +1096,19 @@ Runs on: OpenBVE</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Shinkansen Series 0Shinkansen Series 500 Nozomi</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Shinkansen Series 0Shinkansen Series 500 Nozomi" data-lang-en="Shinkansen Series 0Shinkansen Series 500 Nozomi" data-lang-id="Shinkansen Series 0Shinkansen Series 500 Nozomi" data-lang-ja="Shinkansen Series 0Shinkansen Series 500 Nozomi">Shinkansen Series 0Shinkansen Series 500 Nozomi</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Author: Manuel mejias
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Author: Manuel mejias
+Runs on: OpenBVE" data-lang-id="Author: Manuel mejias
+Runs on: OpenBVE" data-lang-ja="Author: Manuel mejias
+Runs on: OpenBVE">Author: Manuel mejias
 Runs on: OpenBVE</p>
             
         </div>
@@ -875,10 +1126,10 @@ Runs on: OpenBVE</p>
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -886,10 +1137,10 @@ Runs on: OpenBVE</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Download 2</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Download 2</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Download</a>
+                                 <a href="" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Download</a>
                                  
                              </div>
                          </div>
@@ -901,7 +1152,7 @@ Runs on: OpenBVE</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -921,10 +1172,19 @@ Runs on: OpenBVE</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Shinkansen Series 700</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Shinkansen Series 700" data-lang-en="Shinkansen Series 700" data-lang-id="Shinkansen Series 700" data-lang-ja="Shinkansen Series 700">Shinkansen Series 700</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​Author: Manuel mejias
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="â€‹Author: Manuel mejias
+Runs on: OpenBVE" data-lang-id="â€‹Author: Manuel mejias
+Runs on: OpenBVE" data-lang-ja="â€‹Author: Manuel mejias
+Runs on: OpenBVE">â€‹Author: Manuel mejias
 Runs on: OpenBVE</p>
             
         </div>
@@ -942,10 +1202,10 @@ Runs on: OpenBVE</p>
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -958,7 +1218,7 @@ Runs on: OpenBVE</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -978,10 +1238,19 @@ Runs on: OpenBVE</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Shinkansen Series E7</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Shinkansen Series E7" data-lang-en="Shinkansen Series E7" data-lang-id="Shinkansen Series E7" data-lang-ja="Shinkansen Series E7">Shinkansen Series E7</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​Author: Manuel mejias
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="â€‹Author: Manuel mejias
+Runs on: OpenBVE" data-lang-id="â€‹Author: Manuel mejias
+Runs on: OpenBVE" data-lang-ja="â€‹Author: Manuel mejias
+Runs on: OpenBVE">â€‹Author: Manuel mejias
 Runs on: OpenBVE</p>
             
         </div>
@@ -999,10 +1268,10 @@ Runs on: OpenBVE</p>
                  <div class="flex flex-row gap-4">
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-main uppercase mb-2 block truncate">Original</span>
+                         <span class="text-[13px] font-black tracking-widest text-main uppercase mb-2 block truncate" data-i18n="card.download">Original</span>
                          <div class="flex flex-col gap-1.5">
                              <div class="flex flex-col">
-                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">Original</a>
+                                 <a href="http://hstopenbve.blogspot.com/p/shinkansen.html" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.download">Original</a>
                                  
                              </div>
                          </div>
@@ -1015,7 +1284,7 @@ Runs on: OpenBVE</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1044,10 +1313,10 @@ function toggleDescription(btn) {
     const textEl = btn.previousElementSibling;
     if (textEl.classList.contains("line-clamp-2")) {
         textEl.classList.remove("line-clamp-2");
-        btn.textContent = "Read Less";
+        btn.textContent = typeof I18n !== 'undefined' ? I18n.t('card.read_less') : "Read Less";
     } else {
         textEl.classList.add("line-clamp-2");
-        btn.textContent = "Read More";
+        btn.textContent = typeof I18n !== 'undefined' ? I18n.t('card.read_more') : "Read More";
     }
 }
 
@@ -1092,7 +1361,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownMenu.querySelectorAll("button").forEach(btn => {
         btn.addEventListener("click", () => {
             const sortType = btn.getAttribute("data-sort");
-            sortLabel.textContent = "SORT: " + btn.textContent.split(":")[0].trim();
+            sortLabel.textContent = (typeof I18n !== 'undefined' ? I18n.t('collection.sort').replace(': LATEST', '') : "SORT: ") + btn.textContent.split(":")[0].trim();
             
             const cardsToAnimate = Array.from(grid.querySelectorAll('.card-item'));
             
@@ -1154,38 +1423,38 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
                 <div class="md:col-span-4">
-                    <div class="logo mb-8 text-main">
+                    <div class="logo mb-8 text-main" data-i18n="site.title">
                         PROGRESSIVE ADDON
                     </div>
-                    <p class="text-muted text-sm leading-relaxed max-w-sm">
+                    <p class="text-muted text-sm leading-relaxed max-w-sm" data-i18n="footer.desc">
                         High-premium rail simulation contents, professional tools, and experiments for OpenBVE, BVE5, and Trainz enthusiasts.
                     </p>
                 </div>
 
                 <div class="md:col-span-2 md:offset-1">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">RESOURCES</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.resources">RESOURCES</h4>
                     <ul class="space-y-4">
-                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors">Addon Library</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Blender Tools</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Documentation</a></li>
+                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.addon_library">Addon Library</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.blender_tools">Blender Tools</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.documentation">Documentation</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">COMMUNITY</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.community">COMMUNITY</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Discord Server</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">GitHub Repository</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">YouTube Channel</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.discord">Discord Server</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.github">GitHub Repository</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.youtube">YouTube Channel</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">SUPPORT</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.support">SUPPORT</h4>
                     <ul class="space-y-4">
-                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Privacy Policy</a></li>
+                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.about">About Us</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.contact">Contact</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -1194,18 +1463,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
                     &copy; 2026 PROGRESSIVE ADDON.
                 </div>
-                <div class="flex gap-8 text-muted/40">
-                    <a href="#" class="hover:text-main transition-colors">FB</a>
-                    <a href="#" class="hover:text-main transition-colors">TW</a>
-                    <a href="#" class="hover:text-main transition-colors">YT</a>
+                <div class="flex gap-6 items-center text-muted/40">
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Twitter / X">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="YouTube">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
-                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
+                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest" data-i18n="footer.rights">
                     RAIL SIMULATION CONTENT REPOSITORY
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="/assets/js/i18n.js"></script>
     <script src="/assets/js/main.js"></script>
     <!-- SociaBuzz Donation Button -->
     <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>

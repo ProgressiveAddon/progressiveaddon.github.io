@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objects</title>
-    <meta name="description" content="Static objects and items for train simulators.">
     
+    
+        
+    
+    <title>Objects | ProgressiveAddon</title>
+    
+    <meta name="description" content="Download static 3D objects for route building and environment details in OpenBVE, BVETS, and Trainz train simulators.">
+    <link rel="canonical" href="https://progressiveaddon.github.io/content/objects/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Objects | ProgressiveAddon">
+    <meta property="og:description" content="Download static 3D objects for route building and environment details in OpenBVE, BVETS, and Trainz train simulators.">
+    <meta property="og:url" content="https://progressiveaddon.github.io/content/objects/">
+    <meta property="og:site_name" content="ProgressiveAddon">
+    
+        <meta property="og:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Objects | ProgressiveAddon">
+    <meta name="twitter:description" content="Download static 3D objects for route building and environment details in OpenBVE, BVETS, and Trainz train simulators.">
+    
+        <meta name="twitter:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ProgressiveAddon",
+        "url": "https://progressiveaddon.github.io",
+        "description": "High-premium train simulator addons for OpenBVE, BVETS, and Trainz"
+    }
+    </script>
+    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
     
@@ -17,10 +55,8 @@
     
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /* Extra polish for scroll smoothness */
         html { scroll-behavior: smooth; }
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        /* Fix for big titles getting cut */
         .category-title {
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.1;
@@ -32,11 +68,12 @@
     <header class="site-header">
         <a href="/" class="logo hidden sm:flex items-center gap-4">
             <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0">
-                <img src="/assets/img/logo.svg" alt="PA" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
+                <img src="/assets/img/logo.svg" alt="ProgressiveAddon" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
             </span>
             <span class="hidden sm:inline">PROGRESSIVE ADDON</span>
         </a>
-        <nav>
+        <nav data-i18n-nav>
+            <span class="nav-pill"></span>
             
                 
             
@@ -136,7 +173,7 @@
                                     
                                 
                                     
-                                        <a href="/content/dependency/">DEPENDENCY</a>
+                                        <a href="/content/dependency/">DEPENDENCIES</a>
                                     
                                 
                                     
@@ -273,14 +310,42 @@
                 
             
         </nav>
-        <div class="hidden md:block">
-            <a href="/content" class="btn text-[10px] py-2 px-6">LATEST RELEASES</a>
+        <div class="hidden md:flex items-center gap-3">
+            <div class="lang-switcher">
+                <button class="lang-switcher-btn" aria-label="Change language">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span class="lang-current">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button class="lang-option" data-lang="en">EN</button>
+                    <button class="lang-option" data-lang="id">ID</button>
+                    <button class="lang-option" data-lang="ja">JA</button>
+                </div>
+            </div>
+            <a href="/content" class="btn text-[10px] py-2 px-6" data-i18n="nav.latest">LATEST RELEASES</a>
         </div>
     </header>
 
     <!-- Theme Toggle -->
     <div id="theme-toggle" class="theme-toggle-floating">
-        <span id="theme-icon">🌙</span>
+        <svg id="icon-sun" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
     </div>
 
     <main>
@@ -313,10 +378,10 @@
                     </svg>
                 </button>
                 <div id="sort-dropdown-menu" class="hidden absolute right-0 mt-2 w-40 rounded-xl bg-[#0a0a0a]/90 backdrop-blur-md border border-border-theme p-1.5 shadow-xl z-20 transition-all origin-top-right">
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="latest">Latest</button>
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="oldest">Oldest</button>
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="az">Title: A - Z</button>
-                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="za">Title: Z - A</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="latest" data-i18n="collection.sort_latest">Latest</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="oldest" data-i18n="collection.sort_oldest">Oldest</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="az" data-i18n="collection.sort_az">Title: A - Z</button>
+                    <button class="w-full text-left text-[9px] font-bold text-muted hover:text-main hover:bg-main/5 px-3 py-2 rounded-lg transition-colors uppercase tracking-wider block" data-sort="za" data-i18n="collection.sort_za">Title: Z - A</button>
                 </div>
             </div>
         </div>
@@ -337,10 +402,16 @@
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">25 METER RAIL</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="25 METER RAIL" data-lang-en="25 METER RAIL" data-lang-id="25 METER RAIL" data-lang-ja="25 METER RAIL">25 METER RAIL</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Straigh rail with 25 meter length</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Straigh rail with 25 meter length" data-lang-id="Straigh rail with 25 meter length" data-lang-ja="Straigh rail with 25 meter length">Straigh rail with 25 meter length</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -359,11 +430,11 @@
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1czRlYLSDze-h9y3rFXPLRS7NpElAyDD0/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/1czRlYLSDze-h9y3rFXPLRS7NpElAyDD0/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -376,7 +447,7 @@
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -396,13 +467,25 @@
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">ADVERTISEMENT TV</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="ADVERTISEMENT TV" data-lang-en="ADVERTISEMENT TV" data-lang-id="ADVERTISEMENT TV" data-lang-ja="ADVERTISEMENT TV">ADVERTISEMENT TV</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">A tv that display an ads in JR205 Trains.
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="A tv that display an ads in JR205 Trains.
+- 1 object for each game
+- include texture for openbve (for trainz i don't know how to include texture to .im mesh so i use base color instead.)" data-lang-id="A tv that display an ads in JR205 Trains.
+- 1 object for each game
+- include texture for openbve (for trainz i don't know how to include texture to .im mesh so i use base color instead.)" data-lang-ja="A tv that display an ads in JR205 Trains.
+- 1 object for each game
+- include texture for openbve (for trainz i don't know how to include texture to .im mesh so i use base color instead.)">A tv that display an ads in JR205 Trains.
 - 1 object for each game
 - include texture for openbve (for trainz i don't know how to include texture to .im mesh so i use base color instead.)</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -421,11 +504,11 @@
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/13TUbrOo9GzHDTtcOH20A6Zcks-JG2ydy/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/13TUbrOo9GzHDTtcOH20A6Zcks-JG2ydy/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -438,7 +521,7 @@
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -458,19 +541,28 @@
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">AUXILIARY DOLLY</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="AUXILIARY DOLLY" data-lang-en="AUXILIARY DOLLY" data-lang-id="AUXILIARY DOLLY" data-lang-ja="AUXILIARY DOLLY">AUXILIARY DOLLY</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Static object, Include HD texture.</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Static object, Include HD texture." data-lang-id="Static object, Include HD texture." data-lang-ja="Static object, Include HD texture.">Static object, Include HD texture.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
+            
+            
+            
             
             <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
                 <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
-                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed" data-lang-en="Trakteer Exclusive" data-lang-id="Trakteer Exclusive" data-lang-ja="Trakteer Exclusive">Trakteer Exclusive</span>
             </div>
             
 
@@ -487,11 +579,11 @@
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -502,11 +594,11 @@
 
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
                          <div class="flex flex-col gap-2">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -517,11 +609,11 @@
 
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
                          <div class="flex flex-col gap-2">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -530,7 +622,7 @@
                      </div>
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -550,10 +642,16 @@
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">BIG TREE 1</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="BIG TREE 1" data-lang-en="BIG TREE 1" data-lang-id="BIG TREE 1" data-lang-ja="BIG TREE 1">BIG TREE 1</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Static tree object</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Static tree object" data-lang-id="Static tree object" data-lang-ja="Static tree object">Static tree object</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -572,12 +670,12 @@
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1CX0USQCRotdNsUrygx91h8A1GVmfXSLu/view?usp=sharing" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/1CX0USQCRotdNsUrygx91h8A1GVmfXSLu/view?usp=sharing" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -589,7 +687,7 @@
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -609,10 +707,19 @@
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">CEMENT COMODITY</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="CEMENT COMODITY" data-lang-en="CEMENT COMODITY" data-lang-id="CEMENT COMODITY" data-lang-ja="CEMENT COMODITY">CEMENT COMODITY</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">HD : 850~ poly
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="HD : 850~ poly
+Length: 20 meter" data-lang-id="HD : 850~ poly
+Length: 20 meter" data-lang-ja="HD : 850~ poly
+Length: 20 meter">HD : 850~ poly
 Length: 20 meter</p>
             
         </div>
@@ -632,11 +739,11 @@ Length: 20 meter</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/19dcbmH1SvjaDZhKT0A6M8rLgbELz_EwI/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/19dcbmH1SvjaDZhKT0A6M8rLgbELz_EwI/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -649,7 +756,7 @@ Length: 20 meter</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -669,25 +776,49 @@ Length: 20 meter</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Gap Filler V2</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Gap Filler V2" data-lang-en="Gap Filler V2" data-lang-id="Gap Filler V2" data-lang-ja="Gap Filler V2">Gap Filler V2</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">An rubber made object that allow more tight distance between trains and platform.
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- More Accurate shape
+- Highly Optimized (2000~poly)." data-lang-id="An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- More Accurate shape
+- Highly Optimized (2000~poly)." data-lang-ja="An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- More Accurate shape
+- Highly Optimized (2000~poly).">An rubber made object that allow more tight distance between trains and platform.
 - Static object.
 - HD Texture.
 - Blue and black version.
 - More Accurate shape
 - Highly Optimized (2000~poly).</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
+            
+            
+            
             
             <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
                 <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
-                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed" data-lang-en="Trakteer Exclusive" data-lang-id="Trakteer Exclusive" data-lang-ja="Trakteer Exclusive">Trakteer Exclusive</span>
             </div>
             
 
@@ -704,11 +835,11 @@ Length: 20 meter</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -719,11 +850,11 @@ Length: 20 meter</p>
 
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
                          <div class="flex flex-col gap-2">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -734,11 +865,11 @@ Length: 20 meter</p>
 
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
                          <div class="flex flex-col gap-2">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -747,7 +878,7 @@ Length: 20 meter</p>
                      </div>
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -767,10 +898,28 @@ Length: 20 meter</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Gap Filler</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Gap Filler" data-lang-en="Gap Filler" data-lang-id="Gap Filler" data-lang-ja="Gap Filler">Gap Filler</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">An rubber made object that allow more tight distance between trains and platform.
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- Highly Optimized (1700~poly)." data-lang-id="An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- Highly Optimized (1700~poly)." data-lang-ja="An rubber made object that allow more tight distance between trains and platform.
+- Static object.
+- HD Texture.
+- Blue and black version.
+- Highly Optimized (1700~poly).">An rubber made object that allow more tight distance between trains and platform.
 - Static object.
 - HD Texture.
 - Blue and black version.
@@ -779,11 +928,14 @@ Length: 20 meter</p>
         </div>
         <div class="mt-auto flex flex-col">
             
+            
+            
+            
             <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
                 <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
-                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed" data-lang-en="Trakteer Exclusive" data-lang-id="Trakteer Exclusive" data-lang-ja="Trakteer Exclusive">Trakteer Exclusive</span>
             </div>
             
 
@@ -800,11 +952,11 @@ Length: 20 meter</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -815,11 +967,11 @@ Length: 20 meter</p>
 
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#6cb83a] uppercase mb-2 block truncate">BVETS</span>
                          <div class="flex flex-col gap-2">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -830,11 +982,11 @@ Length: 20 meter</p>
 
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#f8a000] uppercase mb-2 block truncate">Trainz</span>
                          <div class="flex flex-col gap-2">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -843,7 +995,7 @@ Length: 20 meter</p>
                      </div>
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -863,10 +1015,19 @@ Length: 20 meter</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">I COND AIR CONDITIONER</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="I COND AIR CONDITIONER" data-lang-en="I COND AIR CONDITIONER" data-lang-id="I COND AIR CONDITIONER" data-lang-ja="I COND AIR CONDITIONER">I COND AIR CONDITIONER</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">I-COND AC
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="I-COND AC
+Type ACI 1803 & ACI 3601" data-lang-id="I-COND AC
+Type ACI 1803 & ACI 3601" data-lang-ja="I-COND AC
+Type ACI 1803 & ACI 3601">I-COND AC
 Type ACI 1803 & ACI 3601</p>
             
         </div>
@@ -886,11 +1047,11 @@ Type ACI 1803 & ACI 3601</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1ASEhoG5M3_JTjH7dvcsuvyad_X-ZSpBk/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/1ASEhoG5M3_JTjH7dvcsuvyad_X-ZSpBk/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -903,7 +1064,7 @@ Type ACI 1803 & ACI 3601</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -923,10 +1084,28 @@ Type ACI 1803 & ACI 3601</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">INDONESIAN FLAG</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="INDONESIAN FLAG" data-lang-en="INDONESIAN FLAG" data-lang-id="INDONESIAN FLAG" data-lang-ja="INDONESIAN FLAG">INDONESIAN FLAG</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​Flag that installed on RI-1 Locomotive.
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="â€‹Flag that installed on RI-1 Locomotive.
+What you get ?
+- 3 object, 2 flag with a pole and 1 flag only.
+- medium poly
+- available in .b3d file" data-lang-id="â€‹Flag that installed on RI-1 Locomotive.
+What you get ?
+- 3 object, 2 flag with a pole and 1 flag only.
+- medium poly
+- available in .b3d file" data-lang-ja="â€‹Flag that installed on RI-1 Locomotive.
+What you get ?
+- 3 object, 2 flag with a pole and 1 flag only.
+- medium poly
+- available in .b3d file">â€‹Flag that installed on RI-1 Locomotive.
 What you get ?
 - 3 object, 2 flag with a pole and 1 flag only.
 - medium poly
@@ -949,17 +1128,17 @@ What you get ?
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/11h26HG5gegsb8YWAM7vGprKuH61rAkAL" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/11h26HG5gegsb8YWAM7vGprKuH61rAkAL" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/11h26HG5gegsb8YWAM7vGprKuH61rAkAL" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/11h26HG5gegsb8YWAM7vGprKuH61rAkAL" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -971,7 +1150,7 @@ What you get ?
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -991,15 +1170,33 @@ What you get ?
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JAPAN STATION SIGN</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="JAPAN STATION SIGN" data-lang-en="JAPAN STATION SIGN" data-lang-id="JAPAN STATION SIGN" data-lang-ja="JAPAN STATION SIGN">JAPAN STATION SIGN</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300">Ultra low poly version (only 2 face per object).
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text line-clamp-2 transition-all duration-300" data-lang-en="Ultra low poly version (only 2 face per object).
+What you get ?
+- 4 sign object with each object had 1 wide version.
+- Texture for template for station name.
+- available in .b3d file" data-lang-id="Ultra low poly version (only 2 face per object).
+What you get ?
+- 4 sign object with each object had 1 wide version.
+- Texture for template for station name.
+- available in .b3d file" data-lang-ja="Ultra low poly version (only 2 face per object).
+What you get ?
+- 4 sign object with each object had 1 wide version.
+- Texture for template for station name.
+- available in .b3d file">Ultra low poly version (only 2 face per object).
 What you get ?
 - 4 sign object with each object had 1 wide version.
 - Texture for template for station name.
 - available in .b3d file</p>
-                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors">Read More</button>
+                <button onclick="toggleDescription(this)" class="expand-btn text-[10px] font-black text-main/50 hover:text-main mt-2 uppercase tracking-wider transition-colors" data-i18n="card.read_more">Read More</button>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -1018,12 +1215,12 @@ What you get ?
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1-jfQjQRRIC6mefecE7ptYkUNqPtgfr2q/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/1-jfQjQRRIC6mefecE7ptYkUNqPtgfr2q/view" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -1035,7 +1232,7 @@ What you get ?
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1055,10 +1252,25 @@ What you get ?
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JAPAN TRAIN HEADMARK</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="JAPAN TRAIN HEADMARK" data-lang-en="JAPAN TRAIN HEADMARK" data-lang-id="JAPAN TRAIN HEADMARK" data-lang-ja="JAPAN TRAIN HEADMARK">JAPAN TRAIN HEADMARK</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">What you get ? :
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="What you get ? :
+- circle and square shaped headmarks
+- template texture include for circle and square shape
+- available in .b3d file" data-lang-id="What you get ? :
+- circle and square shaped headmarks
+- template texture include for circle and square shape
+- available in .b3d file" data-lang-ja="What you get ? :
+- circle and square shaped headmarks
+- template texture include for circle and square shape
+- available in .b3d file">What you get ? :
 - circle and square shaped headmarks
 - template texture include for circle and square shape
 - available in .b3d file</p>
@@ -1080,12 +1292,12 @@ What you get ?
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1-8nSs_bRP-7psbF8JFCXmkVPZj2Wh536/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/1-8nSs_bRP-7psbF8JFCXmkVPZj2Wh536/view" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -1097,7 +1309,7 @@ What you get ?
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1117,10 +1329,16 @@ What you get ?
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JR 205 SERIES COWCATCHER V2</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="JR 205 SERIES COWCATCHER V2" data-lang-en="JR 205 SERIES COWCATCHER V2" data-lang-id="JR 205 SERIES COWCATCHER V2" data-lang-ja="JR 205 SERIES COWCATCHER V2">JR 205 SERIES COWCATCHER V2</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">with minor improvement from previous version.</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="with minor improvement from previous version." data-lang-id="with minor improvement from previous version." data-lang-ja="with minor improvement from previous version.">with minor improvement from previous version.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -1139,11 +1357,11 @@ What you get ?
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/19oQUz6KtGp1tBSyfK1RnIcwa9hvQeTnb/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/19oQUz6KtGp1tBSyfK1RnIcwa9hvQeTnb/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -1156,7 +1374,7 @@ What you get ?
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1176,10 +1394,28 @@ What you get ?
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">JR 205 SERIES COWCATCHER</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="JR 205 SERIES COWCATCHER" data-lang-en="JR 205 SERIES COWCATCHER" data-lang-id="JR 205 SERIES COWCATCHER" data-lang-ja="JR 205 SERIES COWCATCHER">JR 205 SERIES COWCATCHER</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​Medium Poly
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="â€‹Medium Poly
+
+What you get ?
+- 10 different cowcather object .
+- available in .b3d file" data-lang-id="â€‹Medium Poly
+
+What you get ?
+- 10 different cowcather object .
+- available in .b3d file" data-lang-ja="â€‹Medium Poly
+
+What you get ?
+- 10 different cowcather object .
+- available in .b3d file">â€‹Medium Poly
 
 What you get ?
 - 10 different cowcather object .
@@ -1202,17 +1438,17 @@ What you get ?
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/10J-pw9dN5SqpIlpyRQlmFqndKGqVOPj-" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/10J-pw9dN5SqpIlpyRQlmFqndKGqVOPj-" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/10J-pw9dN5SqpIlpyRQlmFqndKGqVOPj-" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/10J-pw9dN5SqpIlpyRQlmFqndKGqVOPj-" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -1224,7 +1460,7 @@ What you get ?
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1244,19 +1480,28 @@ What you get ?
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">KALOG 40FT</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="KALOG 40FT" data-lang-en="KALOG 40FT" data-lang-id="KALOG 40FT" data-lang-ja="KALOG 40FT">KALOG 40FT</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Static object, Include HD texture.</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Static object, Include HD texture." data-lang-id="Static object, Include HD texture." data-lang-ja="Static object, Include HD texture.">Static object, Include HD texture.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
+            
+            
+            
             
             <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
                 <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
-                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">Trakteer Exclusive</span>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed" data-lang-en="Trakteer Exclusive" data-lang-id="Trakteer Exclusive" data-lang-ja="Trakteer Exclusive">Trakteer Exclusive</span>
             </div>
             
 
@@ -1273,11 +1518,11 @@ What you get ?
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://trakteer.id/progressive-addon" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -1290,7 +1535,7 @@ What you get ?
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1310,10 +1555,19 @@ What you get ?
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">LOCOMOTIVE INTERIOR AC</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="LOCOMOTIVE INTERIOR AC" data-lang-en="LOCOMOTIVE INTERIOR AC" data-lang-id="LOCOMOTIVE INTERIOR AC" data-lang-ja="LOCOMOTIVE INTERIOR AC">LOCOMOTIVE INTERIOR AC</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">​This is a air conditioner put inside cabin of indonesia locomotive.
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="â€‹This is a air conditioner put inside cabin of indonesia locomotive.
+for exterior part of this air conditioner object, make sure to check AESTHETIC ADDONS website." data-lang-id="â€‹This is a air conditioner put inside cabin of indonesia locomotive.
+for exterior part of this air conditioner object, make sure to check AESTHETIC ADDONS website." data-lang-ja="â€‹This is a air conditioner put inside cabin of indonesia locomotive.
+for exterior part of this air conditioner object, make sure to check AESTHETIC ADDONS website.">â€‹This is a air conditioner put inside cabin of indonesia locomotive.
 for exterior part of this air conditioner object, make sure to check AESTHETIC ADDONS website.</p>
             
         </div>
@@ -1333,20 +1587,20 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/197La9B0MyHhuQJERHraN6W8gHzuk3g36" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/197La9B0MyHhuQJERHraN6W8gHzuk3g36" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/197La9B0MyHhuQJERHraN6W8gHzuk3g36" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/197La9B0MyHhuQJERHraN6W8gHzuk3g36" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                      <div class="flex items-center justify-between gap-1.5 group/hash cursor-pointer mt-1.5 transition-all w-full select-none" onclick="copyText('')" title="Click to copy hash">
-                                         <span class="text-[7.5px] font-bold text-muted/65 group-hover/hash:text-main leading-none uppercase tracking-wider">SHA Hash</span>
+                                         <span class="text-[11px] font-bold text-muted/65 group-hover/hash:text-main leading-none uppercase tracking-wider" data-i18n="card.sha_hash">SHA Hash</span>
                                          <svg class="w-3 h-3 text-muted/40 group-hover/hash:text-main transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
                                          </svg>
@@ -1362,7 +1616,7 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1382,10 +1636,16 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">PJL GESER YOGYAKARTA</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="PJL GESER YOGYAKARTA" data-lang-en="PJL GESER YOGYAKARTA" data-lang-id="PJL GESER YOGYAKARTA" data-lang-ja="PJL GESER YOGYAKARTA">PJL GESER YOGYAKARTA</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">The most unique level crossing in yogyakarta that slide right and left instead up and down.</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="The most unique level crossing in yogyakarta that slide right and left instead up and down." data-lang-id="The most unique level crossing in yogyakarta that slide right and left instead up and down." data-lang-ja="The most unique level crossing in yogyakarta that slide right and left instead up and down.">The most unique level crossing in yogyakarta that slide right and left instead up and down.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -1404,11 +1664,11 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1AJ-eklZYu8KNcLzhhILmMPwvchgm84ae/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/1AJ-eklZYu8KNcLzhhILmMPwvchgm84ae/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -1421,7 +1681,7 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1441,10 +1701,16 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">SOLO STABLING AREA</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="SOLO STABLING AREA" data-lang-en="SOLO STABLING AREA" data-lang-id="SOLO STABLING AREA" data-lang-ja="SOLO STABLING AREA">SOLO STABLING AREA</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Area for train to rest in solo station</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Area for train to rest in solo station" data-lang-id="Area for train to rest in solo station" data-lang-ja="Area for train to rest in solo station">Area for train to rest in solo station</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -1463,12 +1729,12 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1CO0Wi6EvpkWr6YqQ2kKanzUhadg4-HdC/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/1CO0Wi6EvpkWr6YqQ2kKanzUhadg4-HdC/view" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -1480,7 +1746,7 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1500,21 +1766,36 @@ for exterior part of this air conditioner object, make sure to check AESTHETIC A
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">TOSHIBA RPU 6035V AC</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="TOSHIBA RPU 6035V AC" data-lang-en="TOSHIBA RPU 6035V AC" data-lang-id="TOSHIBA RPU 6035V AC" data-lang-ja="TOSHIBA RPU 6035V AC">TOSHIBA RPU 6035V AC</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">(used on PT INKA KUJR)
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="(used on PT INKA KUJR)
+HD ver : 3000~ poly
+LD ver : 124 poly" data-lang-id="(used on PT INKA KUJR)
+HD ver : 3000~ poly
+LD ver : 124 poly" data-lang-ja="(used on PT INKA KUJR)
+HD ver : 3000~ poly
+LD ver : 124 poly">(used on PT INKA KUJR)
 HD ver : 3000~ poly
 LD ver : 124 poly</p>
             
         </div>
         <div class="mt-auto flex flex-col">
             
+            
+            
+            
             <div class="flex items-start gap-2.5 px-3 py-2 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 mb-6">
                 <svg class="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
                 </svg>
-                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed">* That image just a joke.</span>
+                <span class="text-[9px] font-black uppercase tracking-wider leading-relaxed" data-lang-en="* That image just a joke." data-lang-id="* That image just a joke." data-lang-ja="* That image just a joke.">* That image just a joke.</span>
             </div>
             
 
@@ -1531,17 +1812,17 @@ LD ver : 124 poly</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/198roa6A_jiZ1tMagbdV1y_7HvEHcy3cb/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/198roa6A_jiZ1tMagbdV1y_7HvEHcy3cb/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/198roa6A_jiZ1tMagbdV1y_7HvEHcy3cb/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/198roa6A_jiZ1tMagbdV1y_7HvEHcy3cb/view" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -1553,7 +1834,7 @@ LD ver : 124 poly</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1573,10 +1854,16 @@ LD ver : 124 poly</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">TR241B BOGIE</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="TR241B BOGIE" data-lang-en="TR241B BOGIE" data-lang-id="TR241B BOGIE" data-lang-ja="TR241B BOGIE">TR241B BOGIE</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">A bogie used in JR205 6doors car.</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="A bogie used in JR205 6doors car." data-lang-id="A bogie used in JR205 6doors car." data-lang-ja="A bogie used in JR205 6doors car.">A bogie used in JR205 6doors car.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -1595,11 +1882,11 @@ LD ver : 124 poly</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/18byvDUyclqMRVbj9R_pvlqCgp46hYXvV/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/18byvDUyclqMRVbj9R_pvlqCgp46hYXvV/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -1612,7 +1899,7 @@ LD ver : 124 poly</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1632,10 +1919,19 @@ LD ver : 124 poly</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">TRAIN CONNECTOR / ACCORDION</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="TRAIN CONNECTOR / ACCORDION" data-lang-en="TRAIN CONNECTOR / ACCORDION" data-lang-id="TRAIN CONNECTOR / ACCORDION" data-lang-ja="TRAIN CONNECTOR / ACCORDION">TRAIN CONNECTOR / ACCORDION</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">HD ver : 900~ poly
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="HD ver : 900~ poly
+LD ver : 16 poly" data-lang-id="HD ver : 900~ poly
+LD ver : 16 poly" data-lang-ja="HD ver : 900~ poly
+LD ver : 16 poly">HD ver : 900~ poly
 LD ver : 16 poly</p>
             
         </div>
@@ -1655,17 +1951,17 @@ LD ver : 16 poly</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/19XKioa79Gi__cYCAbo5L3Tfnk1QRVjsP/view" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/19XKioa79Gi__cYCAbo5L3Tfnk1QRVjsP/view" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/19XKioa79Gi__cYCAbo5L3Tfnk1QRVjsP/view" class="btn-outline text-[7px] py-2.5 px-1 border-main/20 hover:border-main/40 text-muted hover:text-main text-center block">Low Ver</a>
+                                     <a href="https://drive.google.com/file/d/19XKioa79Gi__cYCAbo5L3Tfnk1QRVjsP/view" class="btn-outline-low text-[12px] py-2.5 px-1 text-muted text-center block" data-i18n="card.low_ver">Low Ver</a>
                                      
                                  </div>
                              
@@ -1677,7 +1973,7 @@ LD ver : 16 poly</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1697,10 +1993,16 @@ LD ver : 16 poly</p>
     </div>
     <!-- Info -->
     <div class="p-8 pt-2 flex-1 flex flex-col">
-        <h3 class="text-2xl font-black tracking-tight mb-3 text-main">Windshield Wiper</h3>
+        
+        
+        
+        <h3 class="text-2xl font-black tracking-tight mb-3 text-main" data-i18n-text="Windshield Wiper" data-lang-en="Windshield Wiper" data-lang-id="Windshield Wiper" data-lang-ja="Windshield Wiper">Windshield Wiper</h3>
         <div class="description-container relative mb-6">
             
-                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300">Smooth animated wiper that can be triggered by reverser notch position.</p>
+            
+            
+            
+                <p class="text-muted text-xs leading-relaxed description-text transition-all duration-300" data-lang-en="Smooth animated wiper that can be triggered by reverser notch position." data-lang-id="Smooth animated wiper that can be triggered by reverser notch position." data-lang-ja="Smooth animated wiper that can be triggered by reverser notch position.">Smooth animated wiper that can be triggered by reverser notch position.</p>
             
         </div>
         <div class="mt-auto flex flex-col">
@@ -1719,11 +2021,11 @@ LD ver : 16 poly</p>
                      
                      
                      <div class="flex-1 flex flex-col min-w-0">
-                         <span class="text-[8px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
+                         <span class="text-[13px] font-black tracking-widest text-[#3387a2] uppercase mb-2 block truncate">OpenBVE</span>
                          <div class="flex flex-col gap-1.5">
                              
                                  <div class="flex flex-col">
-                                     <a href="https://drive.google.com/file/d/1cl3gLR-RfiYv_OrbPD4OXgl9Pg43_Y1E/view?usp=sharing" class="btn text-[7px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block">High Ver</a>
+                                     <a href="https://drive.google.com/file/d/1cl3gLR-RfiYv_OrbPD4OXgl9Pg43_Y1E/view?usp=sharing" class="btn text-[12px] py-2.5 px-1 bg-main text-bg-dark font-black hover:opacity-90 text-center block" data-i18n="card.high_ver">High Ver</a>
                                      
                                  </div>
                              
@@ -1736,7 +2038,7 @@ LD ver : 16 poly</p>
 
                      
                  </div>
-             
+              
           </div>
       </div>
  </div>
@@ -1765,10 +2067,10 @@ function toggleDescription(btn) {
     const textEl = btn.previousElementSibling;
     if (textEl.classList.contains("line-clamp-2")) {
         textEl.classList.remove("line-clamp-2");
-        btn.textContent = "Read Less";
+        btn.textContent = typeof I18n !== 'undefined' ? I18n.t('card.read_less') : "Read Less";
     } else {
         textEl.classList.add("line-clamp-2");
-        btn.textContent = "Read More";
+        btn.textContent = typeof I18n !== 'undefined' ? I18n.t('card.read_more') : "Read More";
     }
 }
 
@@ -1813,7 +2115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dropdownMenu.querySelectorAll("button").forEach(btn => {
         btn.addEventListener("click", () => {
             const sortType = btn.getAttribute("data-sort");
-            sortLabel.textContent = "SORT: " + btn.textContent.split(":")[0].trim();
+            sortLabel.textContent = (typeof I18n !== 'undefined' ? I18n.t('collection.sort').replace(': LATEST', '') : "SORT: ") + btn.textContent.split(":")[0].trim();
             
             const cardsToAnimate = Array.from(grid.querySelectorAll('.card-item'));
             
@@ -1875,38 +2177,38 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
                 <div class="md:col-span-4">
-                    <div class="logo mb-8 text-main">
+                    <div class="logo mb-8 text-main" data-i18n="site.title">
                         PROGRESSIVE ADDON
                     </div>
-                    <p class="text-muted text-sm leading-relaxed max-w-sm">
+                    <p class="text-muted text-sm leading-relaxed max-w-sm" data-i18n="footer.desc">
                         High-premium rail simulation contents, professional tools, and experiments for OpenBVE, BVE5, and Trainz enthusiasts.
                     </p>
                 </div>
 
                 <div class="md:col-span-2 md:offset-1">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">RESOURCES</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.resources">RESOURCES</h4>
                     <ul class="space-y-4">
-                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors">Addon Library</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Blender Tools</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Documentation</a></li>
+                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.addon_library">Addon Library</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.blender_tools">Blender Tools</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.documentation">Documentation</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">COMMUNITY</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.community">COMMUNITY</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Discord Server</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">GitHub Repository</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">YouTube Channel</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.discord">Discord Server</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.github">GitHub Repository</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.youtube">YouTube Channel</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">SUPPORT</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.support">SUPPORT</h4>
                     <ul class="space-y-4">
-                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Privacy Policy</a></li>
+                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.about">About Us</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.contact">Contact</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -1915,18 +2217,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
                     &copy; 2026 PROGRESSIVE ADDON.
                 </div>
-                <div class="flex gap-8 text-muted/40">
-                    <a href="#" class="hover:text-main transition-colors">FB</a>
-                    <a href="#" class="hover:text-main transition-colors">TW</a>
-                    <a href="#" class="hover:text-main transition-colors">YT</a>
+                <div class="flex gap-6 items-center text-muted/40">
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Twitter / X">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="YouTube">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
-                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
+                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest" data-i18n="footer.rights">
                     RAIL SIMULATION CONTENT REPOSITORY
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="/assets/js/i18n.js"></script>
     <script src="/assets/js/main.js"></script>
     <!-- SociaBuzz Donation Button -->
     <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>

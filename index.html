@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - ProgressiveAddon</title>
-    <meta name="description" content="Modern repository for Train Simulator Addons.">
     
+    
+    <title>ProgressiveAddon - Train Simulator Addons for OpenBVE, BVETS & Trainz</title>
+    
+    <meta name="description" content="High-premium train simulator addons, 3D assets, plugins, and routes for OpenBVE, BVETS, and Trainz. Free downloads with realistic physics and sounds.">
+    <link rel="canonical" href="https://progressiveaddon.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ProgressiveAddon - Train Simulator Addons for OpenBVE, BVETS & Trainz">
+    <meta property="og:description" content="High-premium train simulator addons, 3D assets, plugins, and routes for OpenBVE, BVETS, and Trainz. Free downloads with realistic physics and sounds.">
+    <meta property="og:url" content="https://progressiveaddon.github.io/">
+    <meta property="og:site_name" content="ProgressiveAddon">
+    
+        <meta property="og:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ProgressiveAddon - Train Simulator Addons for OpenBVE, BVETS & Trainz">
+    <meta name="twitter:description" content="High-premium train simulator addons, 3D assets, plugins, and routes for OpenBVE, BVETS, and Trainz. Free downloads with realistic physics and sounds.">
+    
+        <meta name="twitter:image" content="https://progressiveaddon.github.io/assets/img/hero-bg.jpg">
+    
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ProgressiveAddon",
+        "url": "https://progressiveaddon.github.io",
+        "description": "High-premium train simulator addons for OpenBVE, BVETS, and Trainz"
+    }
+    </script>
+    
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
     
@@ -17,10 +53,8 @@
     
     <link rel="stylesheet" href="/assets/css/style.css">
     <style>
-        /* Extra polish for scroll smoothness */
         html { scroll-behavior: smooth; }
         body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        /* Fix for big titles getting cut */
         .category-title {
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.1;
@@ -32,11 +66,12 @@
     <header class="site-header">
         <a href="/" class="logo hidden sm:flex items-center gap-4">
             <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0">
-                <img src="/assets/img/logo.svg" alt="PA" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
+                <img src="/assets/img/logo.svg" alt="ProgressiveAddon" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
             </span>
             <span class="hidden sm:inline">PROGRESSIVE ADDON</span>
         </a>
-        <nav>
+        <nav data-i18n-nav>
+            <span class="nav-pill"></span>
             
                 
             
@@ -136,7 +171,7 @@
                                     
                                 
                                     
-                                        <a href="/content/dependency/">DEPENDENCY</a>
+                                        <a href="/content/dependency/">DEPENDENCIES</a>
                                     
                                 
                                     
@@ -273,14 +308,42 @@
                 
             
         </nav>
-        <div class="hidden md:block">
-            <a href="/content" class="btn text-[10px] py-2 px-6">LATEST RELEASES</a>
+        <div class="hidden md:flex items-center gap-3">
+            <div class="lang-switcher">
+                <button class="lang-switcher-btn" aria-label="Change language">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span class="lang-current">EN</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button class="lang-option" data-lang="en">EN</button>
+                    <button class="lang-option" data-lang="id">ID</button>
+                    <button class="lang-option" data-lang="ja">JA</button>
+                </div>
+            </div>
+            <a href="/content" class="btn text-[10px] py-2 px-6" data-i18n="nav.latest">LATEST RELEASES</a>
         </div>
     </header>
 
     <!-- Theme Toggle -->
     <div id="theme-toggle" class="theme-toggle-floating">
-        <span id="theme-icon">🌙</span>
+        <svg id="icon-sun" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="icon-moon" class="theme-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
     </div>
 
     <main>
@@ -302,7 +365,7 @@
     </div>
 <p><div class="container mx-auto px-6 relative z-10 text-center">
 <h1 class="hero-title mb-12 tracking-tighter">
-PROGRESSIVE<br /><span class="opacity-50">ADDON</span>
+<span data-i18n="home.hero.title1">PROGRESSIVE</span><br /><span class="opacity-50" data-i18n="home.hero.title2">ADDON</span>
 </h1></p>
 <p><div class="h-anim mx-auto max-w-5xl aspect-[21/9] rounded-[40px] shadow-2xl relative group overflow-hidden">
 <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/60 to-transparent z-10"></div>
@@ -314,16 +377,16 @@ PROGRESSIVE<br /><span class="opacity-50">ADDON</span>
     <div class="container mx-auto px-6">
         <div class="glass-card glass-card-section p-10 md:p-20">
             <div class="max-w-3xl">
-                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight text-main">What is<br />OpenBVE?</h2>
-                <p class="text-lg md:text-xl text-muted mb-12 leading-relaxed font-medium">
+                <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight text-main" data-i18n="home.obove.title">What is<br />OpenBVE?</h2>
+                <p class="text-lg md:text-xl text-muted mb-12 leading-relaxed font-medium" data-i18n="home.obove.desc">
                     This is the home of OpenBVE, a license-free, open source, free of charge train driving simulator. This program includes detailed per-car simulation of the brake systems, friction, air resistance, toppling and more. In 3D cabs, the driving experience is augmented with forces that shake your simulated body upon acceleration and braking, as well as in curves. Besides that, OpenBVE features a 3D positional sound system best enjoyed with surround speakers, train exteriors and timetables for the current run. 
                     Finally, via the main menu, routes and trains be easily selected to start a new session, the controls can be configured to keyboard or joystick devices, and a variety of options can be selected. Compared to other simulators of the genre, especially compared to commercial games, OpenBVE has its main focus on realism, not necessarily on user-friendliness.
                 </p>
                 <div class="flex flex-wrap items-center gap-6">
-                    <a href="https://openbve-project.net/" target="_blank" class="btn rounded-2xl border-2 border-sky-400 hover:bg-sky-400/10 transition-all duration-300">
+                    <a href="https://openbve-project.net/" target="_blank" class="btn rounded-2xl border-2 border-sky-400 hover:bg-sky-400/10 transition-all duration-300" data-i18n="home.obove.download">
                         Download Game
                     </a>
-                    <a href="/content" class="btn bg-main text-bg-dark border-none rounded-2xl hover:opacity-90 transition-all duration-300 flex items-center gap-3">
+                    <a href="/content" class="btn bg-main text-bg-dark border-none rounded-2xl hover:opacity-90 transition-all duration-300 flex items-center gap-3" data-i18n="home.obove.explore">
                         Explore Addons
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
@@ -336,21 +399,25 @@ PROGRESSIVE<br /><span class="opacity-50">ADDON</span>
     <div class="container mx-auto px-6">
         <div class="h-anim mx-auto w-full max-w-2xl aspect-square rounded-[40px] mb-12 border border-main/10 shadow-2xl flex items-center justify-center bg-main/5 backdrop-blur-3xl group">
              <div class="text-center p-12 transition-transform duration-500 group-hover:scale-110">
-                <span class="block text-xs font-black uppercase tracking-[0.5em] text-muted mb-4">Preview</span>
-                <h3 class="text-2xl md:text-3xl font-black text-main">3D ASSET VIEWER</h3>
+                <span class="block text-xs font-black uppercase tracking-[0.5em] text-muted mb-4" data-i18n="home.viewer.preview">Preview</span>
+                <h3 class="text-2xl md:text-3xl font-black text-main" data-i18n="home.viewer.title">3D ASSET VIEWER</h3>
              </div>
         </div>
-        <a href="/content" class="btn px-12 py-5 text-sm">Access Collections</a>
+        <a href="/content" class="btn px-12 py-5 text-sm" data-i18n="home.viewer.access">Access Collections</a>
     </div>
 </section>
 <section class="notice-section">
-    <div class="info-icon">i</div>
-    <div class="notice-text">
-        <p>Dengan mengakses dan mengunduh konten di website kami anda tunduk dan setuju dengan syarat dan ketentuan di website ini.</p>
-        <p>By accessing and downloading content on our website you are subject to and agree with the terms and conditions on this website.</p>
-        <p>当ウェブサイトにアクセスし、コンテンツをダウンロードすることにより、お客様は当ウェブサイトに記載された条件に従うものとし、これに同意するものとします。</p>
+    <div class="info-icon">
+        <svg width="32" height="32" viewBox="0 0 260 260" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M145.94 47.09c4.84.01 8.93 1.68 12.25 5.04 3.32 3.36 4.98 7.42 4.98 12.19 0 4.77-1.68 8.83-5.04 12.19-3.36 3.36-7.42 5.04-12.19 5.04-4.69 0-8.71-1.68-12.07-5.04-3.36-3.36-5.04-7.42-5.04-12.19 0-4.77 1.68-8.83 5.04-12.19 3.32-3.36 7.36-5.03 12.13-5.04zm7.27 53.91-24.02 83.32c-1.33 4.77-1.99 7.89-1.99 9.38 0 .86.35 1.66 1.05 2.4.7.74 1.45 1.11 2.23 1.11 1.33 0 2.66-.59 3.98-1.76 3.52-2.89 7.73-8.12 12.66-15.7l3.98 2.34c-11.8 20.55-24.34 30.82-37.62 30.82-5.08 0-9.12-1.43-12.13-4.28-3.01-2.85-4.51-6.46-4.51-10.84 0-2.89.66-6.56 1.99-11.02l16.29-56.02c1.56-5.39 2.34-9.45 2.34-12.19 0-1.72-.74-3.24-2.23-4.57-1.48-1.33-3.52-1.99-6.09-1.99-1.17 0-2.58.04-4.22.12l1.52-4.69 39.73-6.45z"/>
+        </svg>
     </div>
-    <a href="/about" class="btn-outline">LEARN MORE | PELAJARI LEBIH LANJUT</a>
+    <div class="notice-text">
+        <p data-i18n="notice.id">Dengan mengakses dan mengunduh konten di website kami anda tunduk dan setuju dengan syarat dan ketentuan di website ini.</p>
+        <p data-i18n="notice.en">By accessing and downloading content on our website you are subject to and agree with the terms and conditions on this website.</p>
+        <p data-i18n="notice.ja">当ウェブサイトにアクセスし、コンテンツをダウンロードすることにより、お客様は当ウェブサイトに記載された条件に従うものとし、これに同意するものとします。</p>
+    </div>
+    <a href="/about" class="btn-outline" data-i18n="home.notice.learn">LEARN MORE | PELAJARI LEBIH LANJUT</a>
 </section>
 
     </main>
@@ -360,38 +427,38 @@ PROGRESSIVE<br /><span class="opacity-50">ADDON</span>
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
                 <div class="md:col-span-4">
-                    <div class="logo mb-8 text-main">
+                    <div class="logo mb-8 text-main" data-i18n="site.title">
                         PROGRESSIVE ADDON
                     </div>
-                    <p class="text-muted text-sm leading-relaxed max-w-sm">
+                    <p class="text-muted text-sm leading-relaxed max-w-sm" data-i18n="footer.desc">
                         High-premium rail simulation contents, professional tools, and experiments for OpenBVE, BVE5, and Trainz enthusiasts.
                     </p>
                 </div>
 
                 <div class="md:col-span-2 md:offset-1">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">RESOURCES</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.resources">RESOURCES</h4>
                     <ul class="space-y-4">
-                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors">Addon Library</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Blender Tools</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Documentation</a></li>
+                        <li><a href="/content" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.addon_library">Addon Library</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.blender_tools">Blender Tools</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.documentation">Documentation</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">COMMUNITY</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.community">COMMUNITY</h4>
                     <ul class="space-y-4">
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Discord Server</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">GitHub Repository</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">YouTube Channel</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.discord">Discord Server</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.github">GitHub Repository</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.youtube">YouTube Channel</a></li>
                     </ul>
                 </div>
 
                 <div class="md:col-span-2">
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8">SUPPORT</h4>
+                    <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-muted/50 mb-8" data-i18n="footer.support">SUPPORT</h4>
                     <ul class="space-y-4">
-                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors">About Us</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Contact</a></li>
-                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors">Privacy Policy</a></li>
+                        <li><a href="/about" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.about">About Us</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.contact">Contact</a></li>
+                        <li><a href="#" class="text-xs font-bold text-muted hover:text-main transition-colors" data-i18n="footer.privacy">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -400,18 +467,25 @@ PROGRESSIVE<br /><span class="opacity-50">ADDON</span>
                 <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
                     &copy; 2026 PROGRESSIVE ADDON.
                 </div>
-                <div class="flex gap-8 text-muted/40">
-                    <a href="#" class="hover:text-main transition-colors">FB</a>
-                    <a href="#" class="hover:text-main transition-colors">TW</a>
-                    <a href="#" class="hover:text-main transition-colors">YT</a>
+                <div class="flex gap-6 items-center text-muted/40">
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Facebook">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="Twitter / X">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="#" class="hover:text-main transition-colors" aria-label="YouTube">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
                 </div>
-                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest">
+                <div class="text-[10px] font-bold text-muted/40 uppercase tracking-widest" data-i18n="footer.rights">
                     RAIL SIMULATION CONTENT REPOSITORY
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="/assets/js/i18n.js"></script>
     <script src="/assets/js/main.js"></script>
     <!-- SociaBuzz Donation Button -->
     <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>

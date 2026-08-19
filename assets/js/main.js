@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize i18n
+    if (typeof I18n !== 'undefined') {
+        I18n.init().then(() => {
+            translateNav();
+        });
+    }
+
     const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
     const root = document.documentElement;
 
     // Check for saved theme
@@ -20,9 +26,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateIcon(theme) {
-        if (themeIcon) {
-            themeIcon.innerText = theme === 'dark' ? '☀️' : '🌙';
+        if (themeToggle) {
+            if (theme === 'dark') {
+                themeToggle.classList.remove('light-mode');
+            } else {
+                themeToggle.classList.add('light-mode');
+            }
         }
+    }
+
+    // Language Switcher
+    const langSwitcher = document.querySelector('.lang-switcher');
+    const langBtn = document.querySelector('.lang-switcher-btn');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const langCurrent = document.querySelector('.lang-current');
+
+    if (langBtn && langSwitcher) {
+        const savedLang = localStorage.getItem('lang') || 'en';
+        if (langCurrent) langCurrent.textContent = savedLang.toUpperCase();
+        langOptions.forEach(opt => {
+            opt.classList.toggle('active', opt.dataset.lang === savedLang);
+        });
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langSwitcher.classList.toggle('open');
+        });
+
+        langOptions.forEach(opt => {
+            opt.addEventListener('click', () => {
+                const lang = opt.dataset.lang;
+                if (typeof I18n !== 'undefined') {
+                    I18n.setLang(lang).then(() => {
+                        translateNav();
+                    });
+                } else {
+                    localStorage.setItem('lang', lang);
+                    if (langCurrent) langCurrent.textContent = lang.toUpperCase();
+                    langOptions.forEach(o => o.classList.remove('active'));
+                    opt.classList.add('active');
+                }
+                langSwitcher.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!langSwitcher.contains(e.target)) {
+                langSwitcher.classList.remove('open');
+            }
+        });
     }
 
     // Header Scroll Effect
@@ -99,24 +151,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Mobile dropdown handler
-    // Mobile dropdown handler (for all dropdowns)
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         const dropdownTrigger = dropdown.querySelector('.dropdown-trigger');
-        if (dropdownTrigger) {
-            dropdownTrigger.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    if (!dropdown.classList.contains('js-open')) {
-                        e.preventDefault();
-                        // Close other open dropdowns first
-                        dropdowns.forEach(d => {
-                            if (d !== dropdown) d.classList.remove('js-open');
-                        });
-                        dropdown.classList.add('js-open');
-                    }
-                }
-            });
+        if (!dropdownTrigger) return;
+
+        function isMobile() {
+            return window.innerWidth <= 768 || 'ontouchstart' in window;
         }
+
+        dropdownTrigger.addEventListener('touchend', (e) => {
+            if (!isMobile()) return;
+            e.preventDefault();
+            if (dropdown.classList.contains('js-open')) {
+                window.location.href = dropdownTrigger.getAttribute('href');
+            } else {
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) d.classList.remove('js-open');
+                });
+                dropdown.classList.add('js-open');
+            }
+        }, { passive: false });
+
+        dropdownTrigger.addEventListener('click', (e) => {
+            if (!isMobile()) return;
+            e.preventDefault();
+            if (dropdown.classList.contains('js-open')) {
+                window.location.href = dropdownTrigger.getAttribute('href');
+            } else {
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) d.classList.remove('js-open');
+                });
+                dropdown.classList.add('js-open');
+            }
+        });
     });
 
     document.addEventListener('click', (e) => {
@@ -126,6 +194,118 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Nav pill sliding animation
+    const nav = document.querySelector('nav');
+    const pill = document.querySelector('.nav-pill');
+    const pillEase = 'cubic-bezier(0.16, 1, 0.3, 1)';
+    const pillDuration = 350;
+
+    function getActiveLink() {
+        if (!nav) return null;
+        return nav.querySelector('a.active') || nav.querySelector('.dropdown-trigger.active');
+    }
+
+    function getPillRect(el) {
+        const navRect = nav.getBoundingClientRect();
+        const linkRect = el.getBoundingClientRect();
+        return {
+            x: linkRect.left - navRect.left - 5,
+            w: linkRect.width
+        };
+    }
+
+    function animatePill(fromX, fromW, toX, toW, callback) {
+        pill.animate([
+            { transform: `translateX(${fromX}px)`, width: `${fromW}px` },
+            { transform: `translateX(${toX}px)`, width: `${toW}px` }
+        ], {
+            duration: pillDuration,
+            easing: pillEase,
+            fill: 'forwards'
+        }).onfinish = () => {
+            pill.style.transform = `translateX(${toX}px)`;
+            pill.style.width = `${toW}px`;
+            if (callback) callback();
+        };
+    }
+
+    const active = getActiveLink();
+    if (active) {
+        const pos = getPillRect(active);
+        pill.style.opacity = '1';
+        pill.style.transform = `translateX(${pos.x}px)`;
+        pill.style.width = `${pos.w}px`;
+    }
+
+    nav.querySelectorAll('a').forEach(link => {
+        if (link.closest('.dropdown-menu')) return;
+
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+
+            e.preventDefault();
+
+            const currentActive = getActiveLink();
+            if (!currentActive || currentActive === link) {
+                window.location.href = href;
+                return;
+            }
+
+            const from = getPillRect(currentActive);
+            const to = getPillRect(link);
+
+            animatePill(from.x, from.w, to.x, to.w, () => {
+                window.location.href = href;
+            });
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        const a = getActiveLink();
+        if (a) {
+            const pos = getPillRect(a);
+            pill.style.transform = `translateX(${pos.x}px)`;
+            pill.style.width = `${pos.w}px`;
+        }
+    });
+
+    // Translate nav items
+    function translateNav() {
+        if (typeof I18n === 'undefined') return;
+        const navMap = {
+            'HOME': 'nav.home',
+            'CONTENT': 'nav.content',
+            'BLOG': 'nav.blog',
+            'ABOUT': 'nav.about'
+        };
+        document.querySelectorAll('nav a, .dropdown-trigger').forEach(link => {
+            // Use stored key if available, otherwise detect from current text
+            let key = link.dataset.navKey;
+            if (!key) {
+                const text = link.textContent.trim().split('\n')[0].trim();
+                if (navMap[text]) {
+                    key = text;
+                    link.dataset.navKey = key;
+                }
+            }
+            if (key && navMap[key]) {
+                const span = link.childNodes[0];
+                if (span && span.nodeType === 3) {
+                    span.textContent = I18n.t(navMap[key]) + ' ';
+                }
+            }
+        });
+        requestAnimationFrame(() => {
+            const a = getActiveLink();
+            if (a && pill) {
+                const pos = getPillRect(a);
+                pill.style.transform = `translateX(${pos.x}px)`;
+                pill.style.width = `${pos.w}px`;
+            }
+        });
+    }
 });
 
 window.showToast = function(message) {
