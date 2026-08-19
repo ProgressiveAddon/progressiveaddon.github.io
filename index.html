@@ -52,14 +52,6 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap"></noscript>
     
     <link rel="stylesheet" href="/assets/css/style.css">
-    <style>
-        html { scroll-behavior: smooth; }
-        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        .category-title {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            line-height: 1.1;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -369,7 +361,7 @@
 </h1></p>
 <p><div class="h-anim mx-auto max-w-5xl aspect-[21/9] rounded-[40px] shadow-2xl relative group overflow-hidden">
 <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/60 to-transparent z-10"></div>
-<img src="/assets/img/hero-bg.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Hero Background" />
+<img src="/assets/img/hero-bg.jpg" width="2560" height="1280" decoding="async" loading="eager" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Hero Background" />
 </div>
 </div></p>
 </section>
@@ -485,10 +477,10 @@
         </div>
     </footer>
 
-    <script src="/assets/js/i18n.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/i18n.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
     <!-- SociaBuzz Donation Button -->
-    <script type="text/javascript" src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
+    <script defer src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
     <script>sbBoW.draw("progressiveaddon","U3VwcG9ydCBVcyE","position-bottom-left","#76CC11","#FFFFFF")</script>
 </body>
 </html>
