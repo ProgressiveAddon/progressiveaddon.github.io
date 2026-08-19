@@ -195,6 +195,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Support / Donation Overlay
+    const supportFab = document.getElementById('support-fab');
+    const supportOverlay = document.getElementById('support-overlay');
+    const supportClose = document.getElementById('support-close');
+
+    function openSupport() {
+        if (supportOverlay) supportOverlay.classList.add('open');
+    }
+
+    function closeSupport() {
+        if (supportOverlay) supportOverlay.classList.remove('open');
+    }
+
+    if (supportFab) {
+        supportFab.addEventListener('click', openSupport);
+    }
+
+    if (supportClose) {
+        supportClose.addEventListener('click', closeSupport);
+    }
+
+    if (supportOverlay) {
+        supportOverlay.addEventListener('click', (e) => {
+            if (e.target === supportOverlay) closeSupport();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSupport();
+        });
+    }
+
     // Nav pill sliding animation
     const nav = document.querySelector('nav');
     const pill = document.querySelector('.nav-pill');

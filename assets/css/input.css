@@ -644,17 +644,171 @@ nav .dropdown {
     color: var(--text-main);
 }
 
-/* Override SocioBuzz button size to make it smaller on screen */
-#button-on-website-sb,
-.button-on-website-sb,
-[id*="sociabuzz"],
-[class*="sociabuzz"],
-[id*="sbBoW"],
-[class*="sbBoW"] {
-    transform: scale(0.75) !important;
-    transform-origin: bottom left !important;
-    margin-bottom: 12px !important;
-    margin-left: 12px !important;
+/* Support / Donation Overlay */
+.support-fab {
+    position: fixed;
+    bottom: 25px;
+    left: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: var(--bg-dark);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-pill);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.support-fab:hover {
+    transform: translateY(-3px);
+    border-color: var(--text-muted);
+}
+
+.support-fab svg {
+    width: 18px;
+    height: 18px;
+}
+
+.support-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+}
+
+.support-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.support-modal {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-squircle);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    box-shadow: var(--shadow-medium);
+    padding: 40px 32px 32px;
+    text-align: center;
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.support-overlay.open .support-modal {
+    transform: translateY(0) scale(1);
+}
+
+.support-modal h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.support-modal p {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.support-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-border);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.support-close:hover {
+    background: var(--text-muted);
+}
+
+.support-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.support-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: var(--radius-pill);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    transition: var(--transition-smooth);
+}
+
+.support-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.support-link:hover {
+    transform: translateY(-3px);
+    border-color: var(--text-muted);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.support-link.sociabuzz {
+    background: #76CC11;
+    border-color: #76CC11;
+    color: #ffffff;
+}
+
+.support-link.trakteer {
+    background: #F15C22;
+    border-color: #F15C22;
+    color: #ffffff;
+}
+
+.support-link.sociabuzz:hover,
+.support-link.trakteer:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 @tailwind utilities;

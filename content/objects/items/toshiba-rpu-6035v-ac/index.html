@@ -516,8 +516,34 @@ LD ver : 124 poly</p>
         }, 600);
     }
     </script>
-    <!-- SociaBuzz Donation Button -->
-    <script defer src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
-    <script>sbBoW.draw("progressiveaddon","U3VwcG9ydCBVcyE","position-bottom-left","#76CC11","#FFFFFF")</script>
+    <!-- Support / Donation Overlay -->
+    <button id="support-fab" class="support-fab" aria-label="Support us">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span data-i18n="support.button">SUPPORT</span>
+    </button>
+
+    <div id="support-overlay" class="support-overlay" role="dialog" aria-modal="true" aria-label="Support ProgressiveAddon">
+        <div class="support-modal">
+            <button id="support-close" class="support-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <h3 data-i18n="support.title">SUPPORT US</h3>
+            <p data-i18n="support.desc">Love our work? Send a tip to keep the addons coming.</p>
+            <div class="support-links">
+                <a class="support-link sociabuzz" href="https://sociabuzz.com/progressiveaddon/tribe" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span data-i18n="support.sociabuzz">SOCIABUZZ</span>
+                </a>
+                <a class="support-link trakteer" href="https://trakteer.id/progressive-addon" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6a3 3 0 0 0-3-3H3a1 1 0 0 0 0 2h11a1 1 0 0 1 1 1v2H6a3 3 0 0 0-3 3v6a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a3 3 0 0 0-3-3zM6 19a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6z"/></svg>
+                    <span data-i18n="support.trakteer">TRAKTEER</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
