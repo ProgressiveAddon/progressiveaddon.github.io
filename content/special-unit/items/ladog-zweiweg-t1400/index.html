@@ -71,9 +71,17 @@ Without coupler, with coupler on front, with coupler on back.">
 <body>
     <!-- Header -->
     <header class="site-header">
-        <a href="/" class="logo hidden sm:flex items-center gap-4">
-            <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0">
-                <img src="/assets/img/logo.svg" alt="ProgressiveAddon" width="24" height="24" class="brightness-0" onerror="this.style.display='none'">
+        <a href="/" class="logo hidden sm:flex items-center gap-4" onclick="animateLogo(event)">
+            <span class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 overflow-hidden">
+                <svg id="header-logo" viewBox="0 0 270 270" width="24" height="24" class="brightness-0" style="overflow:visible">
+                    <path d="M53.294,59.651l-7.74,28.887l208.84,0c-11.937,-28.666 -47.339,-28.887 -47.339,-28.887l-153.761,0Z" fill="#000"/>
+                    <path d="M61.331,100.216l-18.891,70.502l27.786,0l18.891,-70.502l-27.786,0Z" fill="#000"/>
+                    <path d="M102.338,100.216l-18.891,70.502l27.786,0l18.891,-70.502l-27.786,0Z" fill="#000"/>
+                    <path d="M143.347,100.216l-18.891,70.502l27.786,0l18.891,-70.502l-27.786,0Z" fill="#000"/>
+                    <path d="M184.354,100.216l-18.891,70.502l27.786,0l18.891,-70.502l-27.786,0Z" fill="#000"/>
+                    <path d="M225.393,100.099l-18.891,70.502l32.28,0c6.419,-9.382 11.904,-20.866 15.727,-35.134c3.823,-14.269 4.501,-25.944 3.062,-35.368l-32.178,0Z" fill="#000"/>
+                    <path d="M20.405,182.395l-7.74,28.887l153.761,0c0,0 35.52,-0.22 62.819,-28.887l-208.84,0Z" fill="#000"/>
+                </svg>
             </span>
             <span class="hidden sm:inline">PROGRESSIVE ADDON</span>
         </a>
@@ -487,6 +495,31 @@ Without coupler, with coupler on front, with coupler on back.</p>
 
     <script src="/assets/js/i18n.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
+    <script>
+    function animateLogo(e) {
+        e.preventDefault();
+        var svg = document.getElementById('header-logo');
+        if (!svg) { window.location.href = '/'; return; }
+        var parts = svg.querySelectorAll('path');
+        var delays = [0, 60, 100, 140, 180, 220, 0];
+        parts.forEach(function(p) {
+            p.style.transition = 'none';
+            p.style.transform = 'translateX(-400px)';
+        });
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                parts.forEach(function(p, i) {
+                    var ease = (i === 0 || i === 6) ? 'cubic-bezier(0.22,1.8,0.5,1)' : 'cubic-bezier(.22,1,.36,1)';
+                    p.style.transition = 'transform .35s ' + ease + ' ' + delays[i] + 'ms';
+                    p.style.transform = 'translateX(0)';
+                });
+            });
+        });
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 600);
+    }
+    </script>
     <!-- SociaBuzz Donation Button -->
     <script defer src="https://storage.sociabuzz.com/storage/js/main/buttononwebsite/index.min.js"></script>
     <script>sbBoW.draw("progressiveaddon","U3VwcG9ydCBVcyE","position-bottom-left","#76CC11","#FFFFFF")</script>
